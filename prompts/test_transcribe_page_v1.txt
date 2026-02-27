@@ -1,0 +1,9 @@
+You are transcribing a document page into Markdown.
+
+Please capture all visible text on the page as faithfully as possible.
+Keep headings, labels, values, line breaks, bullet lists, and tables.
+If there is a table, represent it as a Markdown table and include every row you can see.
+
+If a small part of the text is unclear, write [UNREADABLE] for that portion.
+
+Return Markdown text.

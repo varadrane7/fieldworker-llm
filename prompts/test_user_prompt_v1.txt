@@ -1,0 +1,13 @@
+You are given page images from a document.
+
+Task: Extract information and fill the following JSON schema.
+
+STRICT RULES:
+1) Output ONLY valid JSON (no markdown, no backticks).
+2) Do not add new keys or remove keys.
+3) If a value is not present, keep it as an empty string "".
+4) For arrays (service_authorizations, customer_goals, and all needs arrays): include ALL entries you find.
+5) Copy values verbatim as they appear (do NOT summarize).
+
+JSON SCHEMA:
+{schema}
