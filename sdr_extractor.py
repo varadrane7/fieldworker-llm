@@ -68,6 +68,7 @@ MAX_IMG_W   = 1500         # Max image width in pixels (gpt-4.1 handles up to 20
 # ---------------------------------------------------------------------------
 JSON_SCHEMA = {
     "document_type": "Service Data Record (SDR)",
+    "plan_id": "",
     "customer_information": {
         "first_name": "",
         "last_name": "",
@@ -80,7 +81,11 @@ JSON_SCHEMA = {
         "medicaid_id": "",
         "medicaid_type": "",
         "ddd_status": "",
+        "waiver_enrollment_date": "",
     },
+    "guardianship_and_contacts": [{"name": "", "relationship": "", "contact_details": ""}],
+    "emergency_contacts": [{"name": "", "relationship": "", "contact_details": ""}],
+    "medical_practitioners": [{"name": "", "specialty": "", "contact_details": ""}],
     "diagnosis_information": {
         "primary_diagnosis": {"icd_code": "", "description": ""},
         "secondary_diagnoses": [{"icd_code": "", "description": ""}],
@@ -90,11 +95,20 @@ JSON_SCHEMA = {
         "billing_npi": "",
         "mailing_address": {"street": "", "city": "", "state": "", "zip": ""},
     },
-    "support_coordination_company": {"company_name": ""},
+    "support_coordination_company": {
+        "company_name": "",
+        "sc_name": "",
+        "sc_phone": "",
+        "sc_email": "",
+        "scs_name": "",
+        "scs_phone": "",
+        "scs_email": ""
+    },
     "service_authorizations": [
         {
             "service_name": "",
             "procedure_code": "",
+            "procedure_tier": "",
             "start_date": "",
             "end_date": "",
             "pa_number": "",
@@ -104,14 +118,17 @@ JSON_SCHEMA = {
             "unit_type": "",
             "frequency": "",
             "service_location": "",
-            "source": "",
+            "provider_name": "",
+            "service_note": "",
+            "claims_information": "",
+            "associated_goals": []
         }
     ],
     "customer_goals": [{"outcome_number": "", "outcome_description": ""}],
     "customer_needs": {
-        "health_needs":      [{"need_description": ""}],
-        "support_needs":     [{"need_description": ""}],
-        "employment_needs":  [{"need_description": ""}],
+        "health_needs":      [{"category": "", "need_description": ""}],
+        "support_needs":     [{"category": "", "need_description": ""}],
+        "employment_needs":  [{"category": "", "need_description": ""}],
     },
 }
 
@@ -230,9 +247,15 @@ MAPPING_USER_TMPL = (
     "2. Copy ALL values VERBATIM — exact dates, codes, dollar amounts, addresses, descriptions.\n"
     "3. Do NOT summarize, paraphrase, or shorten any description.\n"
     "4. For arrays (service_authorizations, customer_goals, health_needs, support_needs, "
-    "employment_needs): include ALL entries found in the transcript.\n"
+    "employment_needs, guardianship_and_contacts, emergency_contacts, medical_practitioners): "
+    "include ALL entries found in the transcript. It is acceptable for emergency or medical contacts to be redundant with entries on other pages.\n"
     "5. Leave a field as an empty string \"\" only if the value is genuinely not present.\n"
     "6. Output ONLY valid JSON — no explanation, no markdown fences.\n\n"
+    "DATA INTEGRITY GUIDANCE:\n"
+    "- Diagnosis Information: Closely inspect diagnoses names. Fix any missing closing parentheses or trailing commas if they appear cut off.\n"
+    "- Provider Company Attribution: The `provider_company` object MUST ONLY contain data about the actual vendor/agency. DO NOT populate this with the customer's personal demographics (e.g. putting the customer's name as the company name).\n"
+    "- Service Notes: If there is any narrative block of text directly beneath a service entry, capture it entirely as `service_note` inside `service_authorizations`.\n"
+    "- Customer Needs: When a block of notes exists (e.g. under 'Health Hazards - Other'), consolidate the entire block into a single string for `need_description` rather than distributing each bullet point into separate need objects. Treat the header (e.g. 'Health Hazards') as the `category`.\n\n"
     "JSON SCHEMA TO FILL:\n{schema}\n\n"
     "FULL TRANSCRIPT:\n{transcript}"
 )
