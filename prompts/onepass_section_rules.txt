@@ -1,0 +1,64 @@
+Section-specific rules:
+
+A. Customer Information
+- Split full customer name into first_name and last_name when possible.
+- Put the customer's main address/phone/email into customer_information.contact_details.
+- customer_id should map to the SDR ID field when present.
+
+B. Guardianship and Contacts
+- Each person should become one object.
+- Capture relationship exactly as shown.
+- Keep address, home phone, work phone, cell phone, and email under contact_details.
+
+C. Emergency Contacts
+- Preserve the order/priority exactly.
+- Keep primary and secondary phone in the correct fields.
+
+D. Hospital / PCP / Insurance / Organizations
+- Do not merge preferred hospital, primary care physician, administrative service organization, managed care organization, and private insurance.
+- CM should map to cm_name.
+- ID/Grp should map to id_group.
+
+E. Diagnosis
+- Fill primary_diagnosis and secondary_diagnoses carefully.
+- Do not invent diagnosis priority if it is not supported by the document.
+
+F. Support Coordination
+- company_name is the support coordination company.
+- SC fields belong to sc_name/sc_phone/sc_email.
+- SCS fields belong to scs_name/scs_phone/scs_email.
+
+G. Service Authorizations
+- Each service block becomes exactly one service_authorizations item.
+- procedure code should go into procedure_code.
+- procedure tier or procedure name should go into procedure_tier.
+- claims should go into claims_information.
+- provider goes into provider_name.
+- location goes into service_location.
+- free text and EVV descriptions go into service_note.
+- If a service is associated with an outcome/goal, include that reference in associated_goals.
+
+H. Medication
+- Each medication row must remain separate.
+- Keep dosage, frequency, notes, and self-medication as shown.
+
+I. Customer Goals
+- Extract each outcome separately using outcome_number and outcome_description.
+
+J. Customer Needs
+- Health & Nutrition style sections go under health_needs.
+- Behavior / Communication / Religious-Cultural / Support Settings / Safety / Mobility / Home / Work style sections go under support_needs.
+- Preserve category_name and subcategory_name based on document headings.
+- need_description should preserve the original meaning and detail, not a short summary.
+
+K. Employment and Voting
+- employment_status must capture the employment status text.
+- employment_history_or_context must capture any supporting employment narrative/context.
+- employment_plan must capture the plan/recommendations text.
+- voting_plan must capture the voting section text.
+
+L. Team Members and Signatures
+- Extract team members from the participating team members table.
+- Put the attestation paragraph into attestation_text.
+- Put the support coordinator review sentence into support_coordinator_review_note.
+- signature_present should be true only if an actual signature is visibly present, otherwise false.

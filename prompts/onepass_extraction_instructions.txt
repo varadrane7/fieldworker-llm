@@ -1,0 +1,14 @@
+Extract all entities from the SDR and populate the JSON template exactly.
+
+Important extraction expectations:
+1. Customer identity, demographics, identifiers, diagnoses, and contact details must be captured accurately.
+2. Guardianship contacts and emergency contacts are different sections and must not be merged.
+3. Service authorization blocks must be extracted one by one.
+4. All medication rows must be preserved.
+5. Medical practitioners must be extracted from their own table.
+6. Employment, voting, attestation, review note, and team member sections must be included.
+7. Health needs and support needs must preserve their heading hierarchy:
+   category_name -> subcategories -> need_description
+8. Use service_note to capture free text, EVV notes, narrative notes, and extra service-specific details that do not fit another service field.
+9. For dates, copy the text exactly as it appears in the document unless the field is clearly empty.
+10. For phone numbers, emails, addresses, IDs, and names, do not reformat unless necessary to preserve readability.
