@@ -8,17 +8,18 @@ from typing import Any, Dict, List
 from dotenv import load_dotenv
 from openai import OpenAI
 
+import time
 
 ## This is a trial one-pass extraction script.
 ## It is not production-ready.
 
-# ============================================================
+
 ## Config
 
 MODEL_NAME = "gpt-4.1"
 PROMPTS_DIR = Path("prompts")
-OUTPUT_DIR = Path("outputs")
-OUTPUT_DIR.mkdir(exist_ok=True)
+#OUTPUT_DIR = Path("outputs")
+#OUTPUT_DIR.mkdir(exist_ok=True)
 
 env_path = Path(__file__).resolve().parents[1] / ".env"
 load_dotenv(env_path)
@@ -50,7 +51,7 @@ JSON_SCHEMA = {
     	    "email": ""
 	    }
     },
-    "guardianship_and_contacts": [
+    "guardianship_contacts": [
         {
             "name": "", 
             "relationship": "", 
@@ -77,20 +78,25 @@ JSON_SCHEMA = {
     "medical_practitioners": [{"name": "", "specialty": "", "phone_number": "", "notes": ""}],
     "preferred_hospital": {"name": "", "contact_details": {"address": "", "phone_number": ""}, "notes": ""},
     "primary_care_physician": {"name": "", "contact_details": {"address": "", "phone_number": ""}, "notes": ""},
-    "administrative_service_organization": [{"name": "", "cm_name": "", "id_group": "", "contact_details": {"cell_phone": "", "email": ""}}],
-    "managed_care_organization": [{"name": "", "cm_name": "", "id_group": "", "contact_details": {"cell_phone": "", "email": ""}}],
-    "private_insurance": [{"name": "", "cm_name": "", "id_group": "", "contact_details": {"cell_phone": "", "email": ""}}],
+    "administrative_service_organization": {"name": "", "cm_name": "", "id_group": "", "contact_details": {"cell_phone": "", "email": ""}},
+    "managed_care_organization": {"name": "", "cm_name": "", "id_group": "", "contact_details": {"cell_phone": "", "email": ""}},
+    "private_insurance": {"name": "", "cm_name": "", "id_group": "", "contact_details": {"cell_phone": "", "email": ""}},
     "diagnosis_information": {
-        "primary_diagnosis": {"icd_code": "", "description": ""},
-        "secondary_diagnoses": [{"icd_code": "", "description": ""}],
+        "diagnoses": [
+            {
+                "diagnosis_type": "",
+                "icd_code": "",
+                "description": ""
+            }
+        ]
     },
     "support_coordination_company": {
         "company_name": "",
+        "company_phone": "",
+        "company_email": "", 
         "sc_name": "",
-        "sc_phone": "",
         "sc_email": "",
         "scs_name": "",
-        "scs_phone": "",
         "scs_email": ""
     },
     "service_authorizations": [
@@ -101,7 +107,6 @@ JSON_SCHEMA = {
             "reference": "",
             "start_date": "",
             "end_date": "",
-            "pa_number": "",
             "total_units": "",
             "total_cost": "",
             "rate": "",
@@ -111,13 +116,13 @@ JSON_SCHEMA = {
             "provider_name": "",
             "service_note": "",
             "claims_information": "",
-            "associated_goals": []
+            "associated_goals": [{"outcome_number": "", "outcome_description": ""}]
         }
     ],
     "medication_info": [{"order": "", "medication_name": "", "dosage_info": "", "frequency_info": "", "medication_notes": "", "self_medication": ""}],
     "customer_goals": [{"outcome_number": "", "outcome_description": ""}],
     "customer_needs": {
-        "health_needs": [
+        "health_and_nutrition_needs": [
             {
                 "category_name": "", 
                 "subcategories": [
@@ -128,7 +133,7 @@ JSON_SCHEMA = {
                 ]
             }
         ],
-        "support_needs": [
+        "safety_and_support_needs": [
             {
                 "category_name": "", 
                 "subcategories": [
@@ -436,6 +441,12 @@ if __name__ == "__main__":
     INPUT_PDF = "docs/1.pdf"
     OUTPUT_JSON = "results/onepass_extraction.json"
 
+    start = time.time()
+    
     result = extract_sdr_to_json(INPUT_PDF, OUTPUT_JSON)
+    
+    time.sleep(1)
+    end = time.time()
     #print(json.dumps(result, indent=2, ensure_ascii=False))
+    print(f"\nTotal runtime of the program is {end - start:.4f} seconds.")
     print(f"\nSaved JSON to: {OUTPUT_JSON}")
