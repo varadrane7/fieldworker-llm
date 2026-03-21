@@ -1,0 +1,127 @@
+You are extracting one Service Detail Report (SDR)/NJISP PDF directly from the uploaded PDF file into a single JSON object.
+The PDF is the source of truth. Read both its text and page images. Do not use outside knowledge.
+
+Your job is strict extraction, not summarization.
+Return exactly one valid JSON object and nothing else.
+Do not wrap the JSON in markdown fences.
+Do not add commentary.
+Do not invent missing values.
+Do not move information to a different section unless the PDF clearly places it there.
+
+Schema to follow exactly:
+{{JSON_SCHEMA}}
+
+Extraction rules:
+1) General
+- Preserve the overall schema structure and key names exactly.
+- Use empty strings for missing scalar values.
+- Use empty arrays when no items exist for an array field.
+- Keep names, phones, emails, addresses, IDs, dates, codes, and notes as strings.
+- Keep booleans only for signature_present.
+- Keep wording faithful to the PDF. Light cleanup of spacing is allowed, but do not rewrite the meaning.
+- If the PDF says N/A, you may keep "N/A" when that value is the actual field content in the document.
+- Do not infer anything that is not explicitly present.
+
+2) Page-1 profile and contacts
+- document_type should be "Service Data Record (SDR)".
+- plan_id comes from the NJISP Plan ID shown in the header.
+- customer_information contains only the participant/customer's information.
+- Put the participant's address/phones/email in customer_information.contact_details only when the PDF clearly shows those values for the participant.
+- Do not place guardian information into customer_information.
+- guardianship_contacts should contain guardian/legal representative people only.
+- A customer cannot be their own guardian. If the participant name appears in the guardianship block due to layout noise, do not add the participant as a guardian unless the document clearly identifies them as one.
+
+3) Organizations and providers on page 1
+- Keep Administrative Service Organization (ASO), Managed Care Organization (MCO), and Private Insurance as three separate objects.
+- Do not merge them together.
+- support_coordination_company should capture:
+  - company_name
+  - company_phone
+  - company_email
+  - sc_name / sc_email
+  - scs_name / scs_email
+- preferred_hospital and primary_care_physician should capture name, address, and phone when shown.
+
+4) Diagnosis
+- diagnosis_information.diagnoses should contain one item per diagnosis.
+- diagnosis_type should be Primary or Secondary when the PDF labels it that way.
+- If diagnosis lines are visually separated from the labels due to layout, still map them according to the page.
+- Extract icd_code and description separately when possible.
+- Do not invent a diagnosis type if the document does not make it clear.
+
+5) Outcomes and services
+- customer_goals should contain every outcome block.
+- outcome_number should keep the visible label such as "Outcome 1".
+- outcome_description should be the sentence under that outcome heading.
+- service_authorizations should contain every service block from the document.
+- Each service block becomes one array item.
+- associated_goals must include the outcome_number and outcome_description for the outcome that the service belongs to.
+- Map fields carefully:
+  - service_name = the named service (for example Day Habilitation, Community Based Supports)
+  - procedure_tier = the text after Procedure
+  - procedure_code = the text after Code
+  - reference = the text after Reference
+  - claims_information = the text after Claims
+  - provider_name = the text after Provider
+  - service_location = the text after Location
+  - start_date / end_date / unit_type / frequency / rate / total_units / total_cost from the matching labels
+  - service_note = free text note attached to that service block, including EVV text or SDE text when present
+- Keep service blocks that show N/A values; do not drop them.
+
+6) Employment and voting
+- employment_and_voting.employment_status should contain the status phrase only.
+- employment_history_or_context should contain the supporting narrative following Employment Status.
+- employment_plan should contain the plan text after Employment Plan.
+- voting_plan should contain the voting text after Voting Plan.
+
+7) Customer needs
+- customer_needs.health_and_nutrition_needs should only contain content from the "Health & Nutrition Needs" section.
+- customer_needs.safety_and_support_needs should only contain content from the "Safety and Support Needs" section.
+- For each major header inside those sections, create one category object.
+  Examples of category_name values include Allergies, Dietary, Health Hazards, Self-Care, Behavior, Communication, Religious/Cultural, Support Settings, Mobility.
+- category_description should usually be an empty string unless the PDF gives category-level descriptive text separate from subcategories.
+- For each visible subheader under a category, create a subcategory object.
+  Examples include Environmental, Medication - TRILEPTAL, Mealtime supervision, Seizures, Adjusting water temperature, Community, Sounds, Home, Work, Other, None.
+- need_description should contain only the bullet text belonging to that subcategory.
+- Concatenate multiple bullets under the same subcategory into one string separated by newlines.
+- Do not create a subcategory that does not exist in the PDF.
+- Do not let text from one subcategory spill into the next one.
+- Do not let text from one category spill into the next category.
+
+8) Contacts, medication, practitioners, team members, signatures
+- emergency_contacts comes from the Emergency Contacts table.
+- medication_info comes from the Medication table.
+- medical_practitioners comes from the Medical Practitioner table.
+- team_members_present comes from the final Team Members Present / Participating table.
+- authorizations_and_signatures.attestation_text should contain the attestation bullets on the signature page as one text block.
+- authorizations_and_signatures.support_coordinator_review_note should contain the review note sentence.
+- participant.name and guardian_legal_representative.name should come from the signature section if present.
+- signature_present is true only if there is an actual visible signature or mark, not just a printed name.
+- date should be captured only if a date is visibly present in the signature section.
+
+9) Quality bar
+- Be conservative.
+- Never hallucinate or add explanatory labels not present in the schema.
+- Ensure the final output is valid JSON and matches the schema shape.
+
+--------------------------------------------------
+FINAL OUTPUT REQUIREMENTS
+
+- Return ONLY valid JSON.
+- Do NOT include explanations, comments, or markdown.
+- Do NOT wrap output in ```json```.
+
+- Do NOT create new keys that are not in the schema.
+- Do NOT rename keys.
+- Do NOT merge sections.
+
+- If a field is missing in the document:
+  → Keep it empty ("" or null depending on schema)
+
+- If a section does not exist:
+  → Keep the object but leave fields empty
+
+- STRICTLY follow this JSON schema:
+
+{{JSON_SCHEMA}}
+--------------------------------------------------
