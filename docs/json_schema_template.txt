@@ -1,0 +1,184 @@
+{
+    "document_type": "Service Data Record (SDR)",
+    "plan_id": "",
+    "customer_information": {
+        "first_name": "",
+        "last_name": "",
+        "customer_id": "",
+        "date_of_birth": "",
+        "age": "",
+        "gender": "",
+        "county": "",
+        "program": "",
+        "medicaid_id": "",
+        "medicaid_type": "",
+        "ddd_status": "",
+        "waiver_enrollment_date": "",
+	    "contact_details": {
+    	    "address": "",
+    	    "home_phone": "",
+    	    "work_phone": "",
+    	    "cell_phone": "",
+    	    "email": ""
+	    }
+    },
+    "guardianship_contacts": [
+        {
+            "name": "", 
+            "relationship": "", 
+            "contact_details": {
+                "address": "",
+                "home_phone": "",
+                "work_phone": "",
+                "cell_phone": "",
+                "email": ""
+            }
+        }
+    ],
+    "emergency_contacts": [
+        {
+            "priority": "", 
+            "name": "", 
+            "relationship": "", 
+            "contact_details": {
+                "primary_phone": "",
+                "secondary_phone": ""
+            }
+        }
+    ],
+    "medical_practitioners": [
+        {"name": "", "specialty": "", "phone_number": "", "notes": ""}
+    ],
+    "preferred_hospital": {
+        "name": "", 
+        "contact_details": {"address": "", "phone_number": ""}, 
+        "notes": ""
+    },
+    "primary_care_physician": {
+        "name": "", 
+        "contact_details": {"address": "", "phone_number": ""}, 
+        "notes": ""
+    },
+    "administrative_service_organization": {
+        "name": "", 
+        "cm_name": "", 
+        "id_group": "", 
+        "contact_details": {"cell_phone": "", "email": ""}
+    },
+    "managed_care_organization": {
+        "name": "", 
+        "cm_name": "", 
+        "id_group": "", 
+        "contact_details": {"cell_phone": "", "email": ""}
+    },
+    "private_insurance": {
+        "name": "", 
+        "cm_name": "", 
+        "id_group": "", 
+        "contact_details": {"cell_phone": "", "email": ""}
+    },
+    "diagnosis_information": {
+        "diagnoses": [
+            {
+                "diagnosis_type": "",
+                "icd_code": "",
+                "description": ""
+            }
+        ]
+    },
+    "support_coordination_company": {
+        "company_name": "",
+        "company_phone": "",
+        "company_email": "", 
+        "sc_name": "",
+        "sc_email": "",
+        "scs_name": "",
+        "scs_email": ""
+    },
+    "service_authorizations": [
+        {
+            "service_name": "",
+            "procedure_code": "",
+            "procedure_tier": "",
+            "reference": "",
+            "start_date": "",
+            "end_date": "",
+            "total_units": "",
+            "total_cost": "",
+            "rate": "",
+            "unit_type": "",
+            "frequency": "",
+            "service_location": "",
+            "provider_name": "",
+            "service_note": "",
+            "claims_information": "",
+            "associated_goals": [
+                {"outcome_number": "", "outcome_description": ""}
+            ]
+        }
+    ],
+    "medication_info": [
+        {"order": "", 
+        "medication_name": "", 
+        "dosage_info": "", 
+        "frequency_info": "", 
+        "medication_notes": "", 
+        "self_medication": ""}
+    ],
+    "customer_goals": [
+        {"outcome_number": "", "outcome_description": ""}
+    ],
+    "customer_needs": {
+        "health_and_nutrition_needs": [
+            {
+                "category_name": "",
+                "category_description": "",
+                "subcategories": [
+                    {
+                        "subcategory_name": "",
+                        "need_description": ""
+                    }
+                ]
+            }
+        ],
+        "safety_and_support_needs": [
+            {
+                "category_name": "",
+                "category_description": "",
+                "subcategories": [
+                    {
+                        "subcategory_name": "",
+                        "need_description": ""
+                    }
+                ]
+            }
+        ]
+    },
+    "employment_and_voting": {
+        "employment_status": "",
+        "employment_history_or_context": "",
+        "employment_plan": "",
+        "voting_plan": ""
+    },
+    "team_members_present": [
+        {
+            "name": "",
+            "relationship_or_agency": "",
+            "primary_contact": ""
+        }
+    ],
+    "authorizations_and_signatures": {
+        "attestation_text": "",
+        "support_coordinator_review_note": "",
+        "participant": {
+            "name": "",
+            "signature_present": false,
+            "date": ""
+        },
+        "guardian_legal_representative": {
+            "name": "",
+            "signature_present": false,
+            "date": ""
+        }
+    }
+}
