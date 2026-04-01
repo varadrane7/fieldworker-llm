@@ -1,5 +1,5 @@
 {
-    "document_type": "Service Data Record (SDR)",
+    "document_type": "Service Detail Report (SDR)",
     "plan_id": "",
     "customer_information": {
         "first_name": "",
