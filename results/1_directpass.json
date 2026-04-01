@@ -1,5 +1,5 @@
 {
-  "document_type": "Service Data Record (SDR)",
+  "document_type": "Service Detail Report (SDR)",
   "plan_id": "8.04",
   "customer_information": {
     "first_name": "Christopher",
@@ -153,7 +153,7 @@
     ]
   },
   "support_coordination_company": {
-    "company_name": "Disability Services And Advocacy , Llc",
+    "company_name": "Disability Services And Advocacy, Llc",
     "company_phone": "732.238.6133",
     "company_email": "williamsengland@dsausa.net",
     "sc_name": "JENNIFER DEMARCO",
@@ -470,11 +470,11 @@
         ]
       },
       {
-        "category_name": "Safety",
+        "category_name": "Safety and Support Needs",
         "category_description": "",
         "subcategories": [
           {
-            "subcategory_name": "Other",
+            "subcategory_name": "",
             "need_description": "Parents require that the driver control the door in any car/van Christopher occupies. When he was younger Chris had the urge to open car doors, so as a protective measure his parents want his support staff to keep doors locked. Differs from NJCAT which says his environment has not be structured to prevent behaviors within the last six months.\nWhen Chris is in a new situation or meeting new people he may become anxious and agitated. He rubs his hands, his body tenses and he rubs his nose with hid fist when he is anxious and agitated. A support worker should redirect Chris or remove him from the situation to do an activity he enjoys like Yahtzee.\nChris makes inappropriate noises. Chris is non-verbal an he makes vocalizations that disturb others. Mom says he attracts negative attention from others in public. A support worker should tell him to stop. He will listen but he may resume the activity after a while. A support worker must be patient with Chris. Differs from NJCAT which says he does not disrupt activities of others.\nParents have learned of instances where other individuals have verbally belittled and ridiculed Chris for his behavior. Chris has never been aggressive when targeted by others."
           }
         ]
@@ -484,7 +484,7 @@
         "category_description": "",
         "subcategories": [
           {
-            "subcategory_name": "None",
+            "subcategory_name": "",
             "need_description": "He covers his ears in public sometimes. He may start to hum to try to block the noise. Parents have tried The Listening Program with Chris, but it did not appear to help."
           }
         ]
@@ -496,13 +496,25 @@
           {
             "subcategory_name": "Other",
             "need_description": "Christopher is independent in all areas of mobility. He can walk without difficulty, pull himself up, roll over, go up and down stairs, pick up small objects and transfer an object from hand to hand. Chris can crawl, creep and scoot when needed. He can sit independently without support for long periods of time.\nChris needs lots of hands on assistance to make routine purchases, use money and make change. He needs lots of hands on assistance to choose food when shopping for a simple meal. He needs a lot of assistance when ordering food in public.\nChris's family drive him where he needs to go. He has never used public transportation.\nChris needs full support from care givers to make purchases and handle money. He does not understand money. A support worker needs to handle his money and make sure he is not taken advantage of in the community or at work"
-          },
+          }
+        ]
+      },
+      {
+        "category_name": "Home",
+        "category_description": "",
+        "subcategories": [
           {
-            "subcategory_name": "Home",
+            "subcategory_name": "",
             "need_description": "At home , work or in the community a support worker needs to be aware that Chris has limited communication for emotion or pain. A support worker needs to watch his body and face to see if he is sick or in pain. When Chris's face is pale and his eyes are glassy he may be sick.\nChristopher's parents know that in case of an emergency they must notify Chris and make sure he evacuates the house. The home has four separate exits on the first floor. The second floor has two ways to access a porch roof from which individuals can jump from to escape a fire. Christopher's bedroom window has a sticker that alerts firepersons that an autistic individual resides in that room. Christopher is prompt dependent and may not evacuate the house unless someone tells him to do so.\nChris needs lots of assistance and hands on help to make his bed, clean his room and do his laundry. He needs lots of assistance to care for his own clothes, such as folding and putting them away. Christopher requires a lot of hands on assistance to prepare foods which do not require cooking."
-          },
+          }
+        ]
+      },
+      {
+        "category_name": "Work",
+        "category_description": "",
+        "subcategories": [
           {
-            "subcategory_name": "Work",
+            "subcategory_name": "",
             "need_description": "Chris will not use the microwave at home or work unless someone asks him if he wants to heat up his food. At work a support worker needs to ask Chris if he wants to heat up his lunch. Chris can heat it up on his own as long as the support worker keeps an eye on him. He also eats lunch with friends in a room where the staff monitors but may leave for several minutes throughout the hour.\nAt the Tops program Chris uses the restroom independently. Staff would check on him if he did not return to the room in several minutes. Chris needs verbal directions and staff prompts to follow evacuation procedures during drills.\nChris needs staff assistance for virtual online activities. Supports needed include logging onto classes, monitoring throughout lessons and prompts when it is time to do a work related activity. He relies on verbal prompts and calendars."
           }
         ]
@@ -510,8 +522,8 @@
     ]
   },
   "employment_and_voting": {
-    "employment_status": "Unemployed - Experience/Training",
-    "employment_history_or_context": "Christopher is currently attending LifeZone day hab. In High School he volunteered at a local Hospital, and at a Pride Paws pet store in Medford, New Jersey. He stuffed envelopes at a music store in Moorestown New Jersey during High School. Family has not gone back to DVRS since DVRS has deemed him not ready for competitive employment.",
+    "employment_status": "Unemployed - Experience/Training Christopher is currently attending LifeZone day hab.",
+    "employment_history_or_context": "In High School he volunteered at a local Hospital, and at a Pride Paws pet store in Medford, New Jersey. He stuffed envelopes at a music store in Moorestown New Jersey during High School. Family has not gone back to DVRS since DVRS has deemed him not ready for competitive employment.",
     "employment_plan": "Activities you may consider to assist you in exploring employment options include but are not limited to the following:\nSituational assessments (or vocational evaluations) and/or pre-placement services through DVRS\nIf DVRS services are not available, use DDD Career Planning, Supported Employment, or Prevocational Training services, as needed\nUtilize the One-Stop Career Center to access assistance in identifying a career path.Contact your local DVRS office and set up a meeting to determine eligibility for services Visit your One-Stop Career Center to learn about the services they have to offer and access those services that apply\nDiscuss getting a situational assessment through DVRS or (if unavailable from DVRS) through DDD Supported Employment services.",
     "voting_plan": "Registered to Vote. Planning to Vote Needs supports to vote."
   },

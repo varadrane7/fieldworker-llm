@@ -1,5 +1,5 @@
 {
-  "document_type": "Service Data Record (SDR)",
+  "document_type": "Service Detail Report (SDR)",
   "plan_id": "3.00",
   "customer_information": {
     "first_name": "Madison",
@@ -127,7 +127,7 @@
     ]
   },
   "support_coordination_company": {
-    "company_name": "Disability Services And Advocacy, Llc",
+    "company_name": "Disability Services And Advocacy , Llc",
     "company_phone": "732.238.6133",
     "company_email": "williamsengland@dsausa.net",
     "sc_name": "JENNIFER DEMARCO",
@@ -364,6 +364,16 @@
           {
             "subcategory_name": "Home",
             "need_description": "Madison can be home for about 2-3 hours by herself. She has not been home alone overnight. She does have a cell phone and will call her mom if needed. She knows to leave the house and call 911 in case of an emergency.\nMadison needs supervision in prompts and reminders to make the bed. She needs reminders to clean her room. Mom does all laundry, Madison would need full assistance to do laundry. She has needs lots of assistance with folding and putting away clothes, mom mainly does this. Mom washes all dishes. Madison would need complete assistance to wash dishes, differs from NJ Cat."
+          }
+        ]
+      },
+      {
+        "category_name": "",
+        "category_description": "",
+        "subcategories": [
+          {
+            "subcategory_name": "",
+            "need_description": "Dawn is currently working on an emergency plan for Madison's care."
           }
         ]
       },

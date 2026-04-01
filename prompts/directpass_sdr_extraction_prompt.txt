@@ -75,18 +75,83 @@ Extraction rules:
 - voting_plan should contain the voting text after Voting Plan.
 
 7) Customer needs
+
 - customer_needs.health_and_nutrition_needs should only contain content from the "Health & Nutrition Needs" section.
 - customer_needs.safety_and_support_needs should only contain content from the "Safety and Support Needs" section.
-- For each major header inside those sections, create one category object.
-  Examples of category_name values include Allergies, Dietary, Health Hazards, Self-Care, Behavior, Communication, Religious/Cultural, Support Settings, Mobility.
-- category_description should usually be an empty string unless the PDF gives category-level descriptive text separate from subcategories.
-- For each visible subheader under a category, create a subcategory object.
-  Examples include Environmental, Medication - TRILEPTAL, Mealtime supervision, Seizures, Adjusting water temperature, Community, Sounds, Home, Work, Other, None.
-- need_description should contain only the bullet text belonging to that subcategory.
-- Concatenate multiple bullets under the same subcategory into one string separated by newlines.
-- Do not create a subcategory that does not exist in the PDF.
-- Do not let text from one subcategory spill into the next one.
-- Do not let text from one category spill into the next category.
+
+- For each visually distinct category header, create one category object.
+- For each subheader under that category, create one subcategory object.
+
+- need_description should contain only the text belonging to that subcategory.
+- Concatenate multiple bullets under the same subcategory using newline separation.
+
+--------------------------------------------------
+CRITICAL EXTRACTION LOGIC FOR NEEDS SECTIONS
+
+These sections may be multi-column and may continue across pages.
+
+You must track an ACTIVE CATEGORY and ACTIVE SUBCATEGORY while reading.
+
+Core rules:
+
+1. Active context
+- Always maintain:
+  → current category
+  → current subcategory
+- Assign all following text to the active subcategory until a new subcategory header appears.
+- Do NOT reset context at page breaks.
+- Once a category is set, it must remain active until a new category header is explicitly encountered.
+- Do NOT reset or drop the current category due to:
+  → page breaks
+  → column changes
+  → spacing or layout gaps
+  → unlabeled text blocks
+- If text appears and no new category header is visible:
+  → it MUST belong to the current active category.
+- It is strictly forbidden to create a new category with an empty name.
+- If the model is uncertain, it must keep assigning content to the current active category rather than creating a new one.
+- It is strictly forbidden to switch to a different category unless a new category header is explicitly visible in the document.
+
+2. Continuation before new headers
+- If bullet text appears before the next visible category or subcategory header in the same column, assign that text to the current active subcategory.
+- If a new page begins with bullet text and no new header in that column, treat it as continuation of the previous active subcategory.
+- Do NOT reassign continuation text to a new category or subcategory until a new visible header is actually reached.
+- Do NOT switch to a new subcategory immediately when its label appears.
+- Before assigning content to a new subcategory, first assign all preceding bullet or paragraph text in that column to the current active subcategory.
+- A new subcategory begins only after its header and after all text above it in the same column has been assigned.
+- If there is text between two subcategory headers, that text belongs to the earlier subcategory.
+
+3. Column handling
+- Treat columns as independent vertical flows.
+- Read top-to-bottom within each column.
+- Finish assigning all text that appears in the current column position before switching to the next visible subcategory header in that same column.
+- Do NOT merge left and right columns.
+
+4. Hierarchy detection
+- Category headers are visually stronger (often underlined).
+- Subcategories appear under a category and are not underlined.
+- If a label appears under an active category and matches the level of other subcategories, treat it as a subcategory, not a category.
+
+5. No artificial structure
+- Do NOT create empty category objects.
+- Do NOT create empty subcategory names.
+- Do NOT promote subcategories to category level.
+
+6. Continuity priority
+- Continuity of content is more important than proximity in text.
+- Unlabeled bullet text belongs to the current active subcategory until a new visible header is reached in that same column.
+- Do not skip unlabeled continuation text that appears immediately before the next subcategory label.
+- If text logically continues a previous subcategory, keep it there even if new headers appear elsewhere on the page.
+- Assign content based on document structure and position, NOT based on semantic similarity.
+- Do NOT move text to another category because it "sounds like" it belongs there.
+- If content appears under an active category (e.g., Support Settings → Community), it MUST remain there until a new category header is explicitly encountered, even across pages or columns.
+- Overlapping themes (mobility, behavior, safety, communication) may appear in multiple categories. Do NOT reassign based on topic.
+- Always prioritize:
+  → current active category
+  → current active subcategory
+over interpretation of meaning.
+- If content is already assigned to an active category, it must NOT be reassigned to a different category later.
+--------------------------------------------------
 
 8) Contacts, medication, practitioners, team members, signatures
 - emergency_contacts comes from the Emergency Contacts table.
