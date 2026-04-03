@@ -1,5 +1,5 @@
 {
-    "document_type": "Service Detail Report (SDR)",
+    "document_type": "",
     "plan_id": "",
     "customer_information": {
         "first_name": "",
@@ -95,6 +95,14 @@
         "scs_name": "",
         "scs_email": ""
     },
+    "provider_information": {
+        "provider_name": "",
+        "billing_npi": "",
+        "provider_phone": "",
+        "provider_fax": "",
+        "provider_email": "",
+        "provider_address": ""
+    },
     "service_authorizations": [
         {
             "service_name": "",
@@ -117,13 +125,49 @@
             ]
         }
     ],
+    "prior_authorization_and_distribution": [
+        {
+            "ddd_id": "", 
+            "member_medicaid_id": "",
+            "provider_medicaid_id": "",
+            "prior_authorization_number": "",
+            "pa_start_date": "",
+            "pa_end_date": "",
+            "approved_units_till_date": "",
+            "procedure_code": "",
+            "distribution_standard": "",
+            "distribution": [
+                {
+                    "row_number": "",
+                    "start_date": "",
+                    "end_date": "",
+                    "authorized_units": "",
+                    "authorized_hours": ""
+                }
+            ]
+        }
+    ],
+    "rate_change": [
+        {
+            "description": "",
+            "outcome_number": "",
+            "service_number": "",
+            "procedure_code": "",
+            "old_rate": "",
+            "old_rate_effective_date": "",
+            "new_rate": "",
+            "new_rate_effective_date": ""
+        }
+    ],
     "medication_info": [
-        {"order": "", 
-        "medication_name": "", 
-        "dosage_info": "", 
-        "frequency_info": "", 
-        "medication_notes": "", 
-        "self_medication": ""}
+        {
+            "order": "", 
+            "medication_name": "", 
+            "dosage_info": "", 
+            "frequency_info": "", 
+            "medication_notes": "", 
+            "self_medication": ""
+        }
     ],
     "customer_goals": [
         {"outcome_number": "", "outcome_description": ""}
