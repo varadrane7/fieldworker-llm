@@ -23,7 +23,7 @@ Extraction rules:
 - Do not infer anything that is not explicitly present.
 
 2) Page-1 profile and contacts
-- document_type should be "Service Data Record (SDR)".
+- document_type should be "Service Detail Report (SDR)".
 - plan_id comes from the NJISP Plan ID shown in the header.
 - customer_information contains only the participant/customer's information.
 - Put the participant's address/phones/email in customer_information.contact_details only when the PDF clearly shows those values for the participant.

@@ -1,0 +1,111 @@
+You are extracting one Service Detail Report (SDR/TPSDR-style) PDF directly from the uploaded PDF file into a single JSON object.
+The PDF is the source of truth. Read both the text and the page images. Do not use outside knowledge.
+
+Your job is strict extraction, not summarization.
+Return exactly one valid JSON object and nothing else.
+Do not wrap the JSON in markdown fences.
+Do not add commentary.
+Do not invent missing values.
+If a field is not found in the PDF, leave it as an empty string "" or an empty array [] according to the schema.
+
+Schema to follow exactly:
+{{JSON_SCHEMA}}
+
+Extraction rules:
+
+1) General
+- Preserve the schema structure and key names exactly.
+- Keep IDs, phone numbers, NPI, Medicaid IDs, PA numbers, procedure codes, dates, rates, units, hours, and addresses as strings.
+- Keep wording faithful to the PDF. Light spacing cleanup is allowed, but do not rewrite meaning.
+- Do not infer values that are not explicitly present.
+
+2) Document type and header
+- document_type should be "Service Detail Report (SDR)".
+- plan_id comes from the header Plan ID.
+- print date does not need its own field unless already represented elsewhere in the schema.
+
+3) Customer information
+- Extract member/customer information from the member summary box or equivalent area.
+- Split first_name and last_name when clearly possible.
+- customer_id comes from ID.
+- age and gender should be captured from A/G if shown.
+- Put Medicaid ID, Medicaid Type, Program, County, DOB, and DDD Status into customer_information.
+- If customer contact details are not shown, leave them empty.
+
+4) Diagnosis
+- diagnosis_information.diagnoses should contain one item per diagnosis.
+- diagnosis_type should be Primary or Secondary when shown.
+- If multiple diagnoses appear under Secondary, create separate diagnosis items for each code/description pair.
+
+5) Support coordination
+- support_coordination_company should capture the support coordination agency/company plus company phone/email if shown.
+- sc_name/sc_email and scs_name/scs_email should be extracted when present.
+
+6) Provider information
+- provider_information comes from the dedicated Provider Information section.
+- Capture provider_name, billing_npi, provider_phone, provider_fax, provider_email, and provider_address.
+- provider_address should include the full mailing address as one string.
+
+7) Goals and services
+- customer_goals should contain each outcome shown in the document.
+- outcome_number should preserve labels like "Outcome 3".
+- outcome_description should be the text under that outcome.
+
+- service_authorizations should contain each service block.
+- Each service block becomes one item.
+- Map carefully:
+  - service_name = service title
+  - procedure_tier = text after Procedure
+  - procedure_code = text after Proc Code or Code
+  - claims_information = text after Source or Claims, whichever appears in this document type
+  - provider_name = provider name
+  - service_location = text after Service Location or Location
+  - start_date / end_date / unit_type / frequency / rate / total_units / total_cost from matching labels
+  - reference should be filled only if explicitly present; otherwise leave empty
+  - service_note should include descriptive narrative tied to the service, including EVV Description content
+- associated_goals must contain the matching outcome_number and outcome_description for that service.
+
+8) Prior authorization and distribution
+- prior_authorization_and_distribution may contain one or more prior authorization blocks.
+- Create one array item per prior authorization block and attach the matching distribution rows to that same item.
+- Do not merge separate prior authorization blocks together.
+- ddd_id should come from the member ID if no separate DDD ID field exists.
+- member_medicaid_id comes from Medicaid ID.
+- provider_medicaid_id should only be filled if explicitly shown.
+- procedure_code should match the service procedure code tied to the distribution/PA.
+- prior_authorization_number comes from the Prior Authorization table.
+- pa_start_date, pa_end_date, and approved_units_till_date come from the Prior Authorization table.
+- distribution_standard should capture the standard line such as "92 @ 15 Min / Weekly".
+- distribution should contain one item per weekly row in the Distribution table.
+- For each distribution row:
+  - row_number should be assigned sequentially starting at 1
+  - start_date and end_date come from the service week range
+  - authorized_units comes from the units value before the parentheses
+  - authorized_hours comes from the hours value inside parentheses, without changing the visible value
+
+9) Rate change
+- rate_change should contain one item per rate change record/table.
+- description should contain the explanatory paragraph for that rate change block.
+- outcome_number, service_number, and procedure_code come from the row in that rate change block.
+- old_rate and new_rate come from the table row.
+- old_rate_effective_date and new_rate_effective_date must be taken from the table headers or clearly associated explanatory text.
+- Do not merge multiple rate change records together.
+
+10) Missing sections
+- This document type may not contain many NJISP sections such as needs, medication, medical practitioners, team members, signatures, employment, voting, emergency contacts, guardianship, hospital, or PCP.
+- Leave those schema fields empty rather than inventing data.
+
+11) Quality bar
+- Be conservative.
+- Tables must be extracted accurately.
+- Do not mix values between Provider Information, Support Coordination, Service, Prior Authorization, Distribution, and Rate Change.
+- Return only valid JSON matching the schema.
+
+FINAL OUTPUT REQUIREMENTS
+- Return ONLY valid JSON.
+- Do NOT include explanations, comments, or markdown.
+- Do NOT create keys not present in the schema.
+- If a field is not found, leave it empty.
+- STRICTLY follow this JSON schema:
+
+{{JSON_SCHEMA}}
