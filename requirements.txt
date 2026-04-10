@@ -1,4 +1,19 @@
+# LangChain stack
+langchain>=0.3.0
+langchain-openai>=0.2.0
+langchain-core>=0.3.0
+
+# Direct OpenAI (kept for existing scripts/ compatibility)
 openai>=1.30.0
+
+# Environment
 python-dotenv>=1.0.0
-pdf2image>=1.17.0
+
+# PDF rendering — PyMuPDF (no Poppler needed)
+pymupdf>=1.24.0
+
+# Image handling
 Pillow>=10.0.0
+
+# Legacy — required by sdr_extractor.py (needs Poppler at runtime)
+pdf2image>=1.17.0

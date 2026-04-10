@@ -1,0 +1,10 @@
+This is page {page_num} of a Service Data Record (SDR) document.
+
+INSTRUCTIONS:
+- Transcribe EVERY piece of text visible on this page into Markdown.
+- Reproduce table rows and columns with their exact values — do NOT skip any row.
+- Copy labels and their values exactly as printed — do NOT paraphrase.
+- Include ALL codes, dates, dollar amounts, units, addresses, and IDs.
+- Do NOT summarize, interpret, or omit anything — verbatim copy only.
+
+Begin transcription:
