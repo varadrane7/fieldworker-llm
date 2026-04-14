@@ -1,0 +1,572 @@
+{
+  "document_type": "Service Detail Report",
+  "plan_id": "7.02",
+  "customer_information": {
+    "first_name": "Timothy",
+    "last_name": "Podolski",
+    "customer_id": "307216",
+    "date_of_birth": "02/17/1986",
+    "age": "39",
+    "gender": "Male",
+    "county": "Cape May",
+    "program": "Supports Program",
+    "medicaid_id": "052000120501",
+    "medicaid_type": "Categorically Needy Disability Assistance Medicaid Only - No Money Payment",
+    "ddd_status": "Eligible For DDD Services",
+    "waiver_enrollment_date": "",
+    "contact_details": {
+      "address": "",
+      "home_phone": "",
+      "work_phone": "",
+      "cell_phone": "",
+      "email": ""
+    }
+  },
+  "guardianship_contacts": [],
+  "emergency_contacts": [],
+  "medical_practitioners": [],
+  "preferred_hospital": {
+    "name": "",
+    "contact_details": {
+      "address": "",
+      "phone_number": ""
+    },
+    "notes": ""
+  },
+  "primary_care_physician": {
+    "name": "",
+    "contact_details": {
+      "address": "",
+      "phone_number": ""
+    },
+    "notes": ""
+  },
+  "administrative_service_organization": {
+    "name": "",
+    "cm_name": "",
+    "id_group": "",
+    "contact_details": {
+      "cell_phone": "",
+      "email": ""
+    }
+  },
+  "managed_care_organization": {
+    "name": "",
+    "cm_name": "",
+    "id_group": "",
+    "contact_details": {
+      "cell_phone": "",
+      "email": ""
+    }
+  },
+  "private_insurance": {
+    "name": "",
+    "cm_name": "",
+    "id_group": "",
+    "contact_details": {
+      "cell_phone": "",
+      "email": ""
+    }
+  },
+  "diagnosis_information": {
+    "diagnoses": [
+      {
+        "diagnosis_type": "Primary",
+        "icd_code": "F84.9",
+        "description": "Unspecified Pervasive Developmental Disorder, Pervasive Developmental Disorder-NOS"
+      },
+      {
+        "diagnosis_type": "Secondary",
+        "icd_code": "F79",
+        "description": "Unspecified Intellectual Disability"
+      },
+      {
+        "diagnosis_type": "Secondary",
+        "icd_code": "S09.90XA",
+        "description": "Head Injury, unspecified"
+      }
+    ]
+  },
+  "support_coordination_company": {
+    "company_name": "Neighbours Inc",
+    "company_phone": "609.275.0606",
+    "company_email": "cherryoakley@neighbours-inc.com",
+    "sc_name": "Stephenee Carsten",
+    "sc_email": "Stepheneecarsten@neighbours-inc.com",
+    "scs_name": "Kelly Ross",
+    "scs_email": "kellyross@neighbours-inc.com"
+  },
+  "provider_information": {
+    "provider_name": "Clarkcare",
+    "billing_npi": "1437667995",
+    "provider_phone": "856.520.3848 x 0",
+    "provider_fax": "856.582.2490",
+    "provider_email": "rclark@ClarkCareNJ.com",
+    "provider_address": "85 Mantua Boulevard, Mantua, NJ, 08051"
+  },
+  "service_authorizations": [
+    {
+      "service_name": "Community Based Supports",
+      "procedure_code": "H2021HI",
+      "procedure_tier": "CBS",
+      "reference": "",
+      "start_date": "02/19/2024",
+      "end_date": "02/17/2025",
+      "total_units": "4876",
+      "total_cost": "$46858.36",
+      "rate": "$9.61",
+      "unit_type": "15 Min",
+      "frequency": "Weekly",
+      "service_location": "Community",
+      "provider_name": "",
+      "service_note": "Tim is supported by his mom, Kathleen Podolski, both at home and in the community. This service does not require EVV as she is a live in care giver.\nEVV Status: No. Kathleen is a live in care giver and therefore this service does not require EVV.",
+      "claims_information": "Medicaid",
+      "associated_goals": [
+        {
+          "outcome_number": "3",
+          "outcome_description": "Tim will make new connections and explore the community."
+        }
+      ]
+    }
+  ],
+  "prior_authorization_and_distribution": [
+    {
+      "ddd_id": "",
+      "member_medicaid_id": "052000120501",
+      "provider_medicaid_id": "",
+      "prior_authorization_number": "1552559765",
+      "pa_start_date": "02/19/2024",
+      "pa_end_date": "02/17/2025",
+      "approved_units_till_date": "4,876",
+      "procedure_code": "H2021HI",
+      "distribution_standard": "92 @ 15 Min / Weekly",
+      "distribution": [
+        {
+          "row_number": "1",
+          "start_date": "2/19/2024",
+          "end_date": "2/24/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "2",
+          "start_date": "2/25/2024",
+          "end_date": "3/2/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "3",
+          "start_date": "3/3/2024",
+          "end_date": "3/9/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "4",
+          "start_date": "3/10/2024",
+          "end_date": "3/16/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "5",
+          "start_date": "3/17/2024",
+          "end_date": "3/23/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "6",
+          "start_date": "3/24/2024",
+          "end_date": "3/30/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "7",
+          "start_date": "3/31/2024",
+          "end_date": "4/6/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "8",
+          "start_date": "4/7/2024",
+          "end_date": "4/13/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "9",
+          "start_date": "4/14/2024",
+          "end_date": "4/20/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "10",
+          "start_date": "4/21/2024",
+          "end_date": "4/27/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "11",
+          "start_date": "4/28/2024",
+          "end_date": "5/4/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "12",
+          "start_date": "5/5/2024",
+          "end_date": "5/11/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "13",
+          "start_date": "5/12/2024",
+          "end_date": "5/18/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "14",
+          "start_date": "5/19/2024",
+          "end_date": "5/25/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "15",
+          "start_date": "5/26/2024",
+          "end_date": "6/1/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "16",
+          "start_date": "6/2/2024",
+          "end_date": "6/8/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "17",
+          "start_date": "6/9/2024",
+          "end_date": "6/15/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "18",
+          "start_date": "6/16/2024",
+          "end_date": "6/22/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "19",
+          "start_date": "6/23/2024",
+          "end_date": "6/29/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "20",
+          "start_date": "6/30/2024",
+          "end_date": "7/6/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "21",
+          "start_date": "7/7/2024",
+          "end_date": "7/13/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "22",
+          "start_date": "7/14/2024",
+          "end_date": "7/20/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "23",
+          "start_date": "7/21/2024",
+          "end_date": "7/27/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "24",
+          "start_date": "7/28/2024",
+          "end_date": "8/3/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "25",
+          "start_date": "8/4/2024",
+          "end_date": "8/10/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "26",
+          "start_date": "8/11/2024",
+          "end_date": "8/17/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "27",
+          "start_date": "8/18/2024",
+          "end_date": "8/24/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "28",
+          "start_date": "8/25/2024",
+          "end_date": "8/31/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "29",
+          "start_date": "9/1/2024",
+          "end_date": "9/7/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "30",
+          "start_date": "9/8/2024",
+          "end_date": "9/14/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "31",
+          "start_date": "9/15/2024",
+          "end_date": "9/21/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "32",
+          "start_date": "9/22/2024",
+          "end_date": "9/28/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "33",
+          "start_date": "9/29/2024",
+          "end_date": "10/5/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "34",
+          "start_date": "10/6/2024",
+          "end_date": "10/12/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "35",
+          "start_date": "10/13/2024",
+          "end_date": "10/19/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "36",
+          "start_date": "10/20/2024",
+          "end_date": "10/26/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "37",
+          "start_date": "10/27/2024",
+          "end_date": "11/2/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "38",
+          "start_date": "11/3/2024",
+          "end_date": "11/9/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "39",
+          "start_date": "11/10/2024",
+          "end_date": "11/16/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "40",
+          "start_date": "11/17/2024",
+          "end_date": "11/23/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "41",
+          "start_date": "11/24/2024",
+          "end_date": "11/30/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "42",
+          "start_date": "12/1/2024",
+          "end_date": "12/7/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "43",
+          "start_date": "12/8/2024",
+          "end_date": "12/14/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "44",
+          "start_date": "12/15/2024",
+          "end_date": "12/21/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "45",
+          "start_date": "12/22/2024",
+          "end_date": "12/28/2024",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "46",
+          "start_date": "12/29/2024",
+          "end_date": "1/4/2025",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "47",
+          "start_date": "1/5/2025",
+          "end_date": "1/11/2025",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "48",
+          "start_date": "1/12/2025",
+          "end_date": "1/18/2025",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "49",
+          "start_date": "1/19/2025",
+          "end_date": "1/25/2025",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "50",
+          "start_date": "1/26/2025",
+          "end_date": "2/1/2025",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "51",
+          "start_date": "2/2/2025",
+          "end_date": "2/8/2025",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "52",
+          "start_date": "2/9/2025",
+          "end_date": "2/15/2025",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        },
+        {
+          "row_number": "53",
+          "start_date": "2/16/2025",
+          "end_date": "2/17/2025",
+          "authorized_units": "92",
+          "authorized_hours": "23.00"
+        }
+      ]
+    }
+  ],
+  "rate_change": [
+    {
+      "description": "The rates for the listed services have changed as of July 17, 2024. When submitting claims for services rendered 07/16/2024 and earlier, the old rates must be used. When submitting claims for services rendered 07/17/2024 and later, the new rates should be used. The rate modifications will not affect Prior Authorization numbers, which will remain the same.",
+      "outcome_number": "3",
+      "service_number": "1",
+      "procedure_code": "H2021HI",
+      "old_rate": "$9.53",
+      "old_rate_effective_date": "07/16/2024",
+      "new_rate": "$9.58",
+      "new_rate_effective_date": "07/17/2024"
+    },
+    {
+      "description": "The rates for the listed services have changed as of October 1, 2024. When submitting claims for services rendered 09/30/2024 and earlier, the old rates must be used. When submitting claims for services rendered 10/01/2024 and later, the new rates should be used. The rate modifications will not affect Prior Authorization numbers, which will remain the same.",
+      "outcome_number": "3",
+      "service_number": "1",
+      "procedure_code": "H2021HI",
+      "old_rate": "$9.58",
+      "old_rate_effective_date": "09/30/2024",
+      "new_rate": "$9.61",
+      "new_rate_effective_date": "10/01/2024"
+    }
+  ],
+  "medication_info": [],
+  "customer_goals": [
+    {
+      "outcome_number": "3",
+      "outcome_description": "Tim will make new connections and explore the community."
+    }
+  ],
+  "customer_needs": {
+    "health_and_nutrition_needs": [],
+    "safety_and_support_needs": []
+  },
+  "employment_and_voting": {
+    "employment_status": "",
+    "employment_history_or_context": "",
+    "employment_plan": "",
+    "voting_plan": ""
+  },
+  "team_members_present": [],
+  "authorizations_and_signatures": {
+    "attestation_text": "",
+    "support_coordinator_review_note": "",
+    "participant": {
+      "name": "",
+      "signature_present": false,
+      "date": ""
+    },
+    "guardian_legal_representative": {
+      "name": "",
+      "signature_present": false,
+      "date": ""
+    }
+  }
+}

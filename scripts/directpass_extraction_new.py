@@ -15,7 +15,7 @@ from openai import OpenAI
 MODEL_NAME = "gpt-4.1"
 DEFAULT_DOCS_DIR = "docs"
 DEFAULT_RESULTS_DIR = "results"
-DEFAULT_PROMPT_PATH = "prompts/directpass_sdr_extraction_prompt.txt"
+DEFAULT_PROMPT_PATH = "prompts/merged_extraction_prompt.txt"
 DEFAULT_SCHEMA_PATH = "docs/json_schema_template.txt"
 
 
@@ -227,7 +227,7 @@ def process_single_pdf(client, pdf_path, prompt_path, schema_path, results_dir):
     final_output = enforce_schema(parsed_output, schema_template)
 
     ensure_dir(results_dir)
-    output_name = os.path.splitext(os.path.basename(pdf_path))[0] + "_directpass.json"
+    output_name = os.path.splitext(os.path.basename(pdf_path))[0] + "_merged_directpass_extraction.json"
     output_path = os.path.join(results_dir, output_name)
 
     with open(output_path, "w", encoding="utf-8") as f:

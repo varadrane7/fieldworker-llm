@@ -1,0 +1,296 @@
+# SDR PDF Extraction Prompt
+
+You are extracting one Service Detail Report (SDR) PDF into a single JSON object.
+
+The PDF is the source of truth. Read both text and layout. Do not use outside knowledge.
+
+Your job is strict extraction, not summarization.  
+Do not invent values.  
+Do not move content across sections unless clearly indicated in the PDF.
+
+If a field is missing, leave it as `""` or `[]` according to the schema.
+
+---
+
+## Schema
+{{JSON_SCHEMA}}
+
+---
+
+## General Rules
+
+- Preserve schema keys exactly  
+- Keep names, phones, emails, addresses, IDs, NPI, Medicaid IDs, dates, codes, rates, units, hours as **strings**  
+- Only `signature_present` is boolean  
+- Keep wording faithful (minor spacing cleanup allowed)  
+- Do not infer missing values  
+
+---
+
+## Header & Customer
+
+- `document_type` comes from the document  
+- `plan_id` from Plan ID / NJISP Plan ID  
+
+- `customer_information` = participant only (never guardian)  
+- `guardianship_contacts` = guardian/legal representative only  
+
+- A participant cannot be their own guardian unless explicitly stated  
+
+---
+
+## Organizations & Providers
+
+- Keep ASO, MCO, Private Insurance separate  
+
+- `support_coordination_company` captures:
+  - company + SC/SCS info  
+
+- `provider_information` only from a **dedicated Provider section**  
+
+- `preferred_hospital` and `primary_care_physician`:
+  - extract name, address, phone when present  
+
+---
+
+## Diagnosis
+
+- One item per diagnosis  
+- `diagnosis_type` = Primary/Secondary only if explicitly shown  
+- Extract `icd_code` + `description` separately  
+- Do not infer missing types  
+
+---
+
+## Services & Outcomes
+
+- Each outcome → one `customer_goals` item  
+- Each service block → one `service_authorizations` item  
+
+- `associated_goals` must match the correct outcome  
+
+### Field Mapping
+
+- `service_name` = service title  
+- `procedure_tier` = text after Procedure  
+- `procedure_code` = Proc Code / Code  
+- `reference` = Reference (if exists)  
+- `claims_information` = Claims / Source  
+- `service_location` = Service Location / Location  
+- Dates, units, rate, frequency → from labels  
+- `service_note` = all extra text tied to that service  
+
+### Provider Rule
+
+- `provider_name` ONLY if explicitly tied to the service  
+- NEVER use Support Coordination as provider  
+- If unclear → leave empty  
+
+---
+
+## Prior Authorization / Distribution / Rate Change
+
+- `prior_authorization_and_distribution` = array (one per PA block)  
+- Attach matching distribution rows to each PA  
+- Do NOT merge PA blocks  
+
+### Fields
+
+- `ddd_id` = member ID if no separate field  
+- `member_medicaid_id` = Medicaid ID  
+- `provider_medicaid_id` only if explicitly shown  
+- `prior_authorization_number` from PA table  
+- `procedure_code` = match related service if possible  
+
+### Distribution
+
+- One item per row  
+- `row_number` = sequential starting at 1  
+- `start_date` / `end_date` from row  
+- `authorized_units` = before parentheses  
+- `authorized_hours` = inside parentheses  
+
+### Rate Change
+
+- One item per block  
+- Extract description + table values  
+- Do not merge records  
+
+---
+
+## Employment & Voting
+
+- `employment_status` = status only  
+- `employment_history_or_context` = narrative  
+- `employment_plan` = plan text  
+- `voting_plan` = voting text  
+
+---
+
+## Customer Needs
+
+- Extract ONLY if section exists:
+  - Health & Nutrition Needs  
+  - Safety and Support Needs  
+
+- Category = header  
+- Subcategory = subheader  
+- `need_description` = all text for that subcategory  
+- Merge bullets using newline  
+
+---
+
+## Critical Needs Logic (Multi-column + Multi-page)
+
+### Core Principle
+
+When layout is unclear, preserve the current structure.
+Do not create new structure unless a new header is clearly visible.
+
+---
+
+### Active Context
+
+- Track ACTIVE CATEGORY and ACTIVE SUBCATEGORY at all times  
+- NEVER reset at page breaks  
+- NEVER reset at column changes  
+
+STRICT RULES:
+
+- category_name MUST NEVER be empty  
+- subcategory_name MUST NEVER be empty  
+
+- If no new category header is clearly visible:
+  MUST continue using the current ACTIVE CATEGORY  
+
+- If no new subcategory header is clearly visible:
+  MUST continue using the current ACTIVE SUBCATEGORY  
+
+- DO NOT create a new category unless a clear category header is visible  
+- DO NOT create a new subcategory unless a clear subcategory header is visible  
+
+- DO NOT create duplicate categories  
+  If a category already exists, continue adding to it  
+
+- If uncertain:
+  CONTINUE the current category and subcategory  
+  DO NOT create new ones  
+
+---
+
+### Assignment Rules
+
+- Assign all content to the ACTIVE SUBCATEGORY until a new subcategory header appears  
+
+- Any text before the next subcategory header:
+  belongs to the current subcategory  
+
+- If text appears between two subcategory headers:
+  assign it to the earlier subcategory  
+
+- If a category contains content but no visible subcategory header:
+  use subcategory_name = "N/A"  
+
+- Use "N/A" ONLY when no explicit subcategory exists  
+- DO NOT use "Other" unless it appears in the document  
+
+---
+
+### Column Handling
+
+- Treat each column as an independent vertical flow  
+- Read top-to-bottom within a column  
+- DO NOT mix left and right columns  
+
+- If layout is unclear across columns or pages:
+  KEEP content in the current category and subcategory  
+  DO NOT reassign based on meaning  
+
+---
+
+### Hierarchy
+
+- Category headers are visually stronger (often underlined)  
+- Subcategory headers are not underlined  
+
+- Once a category is active:
+  ALL following subcategories belong to it
+  until a new category header appears  
+
+- DO NOT promote subcategories to categories  
+- DO NOT create new categories due to layout confusion  
+
+---
+
+### Continuity Priority
+
+- Continuity is more important than proximity  
+- Structure is more important than meaning  
+
+- ALWAYS prioritize:
+  ACTIVE CATEGORY  
+  ACTIVE SUBCATEGORY  
+
+- DO NOT move content based on topic similarity  
+
+- Overlapping topics may appear in different categories  
+  DO NOT reassign content because it “fits better” elsewhere  
+
+- If creating a new object would result in:
+  empty category_name OR empty subcategory_name  
+  DO NOT create that object  
+  attach the content to the current category/subcategory instead  
+
+- If structure is unclear:
+  KEEP content where it is  
+  DO NOT create new structure   
+
+---
+
+## Contacts / Medication / Signatures
+
+Extract tables when present:
+- `emergency_contacts`  
+- `medication_info`  
+- `medical_practitioners`  
+- `team_members_present`  
+
+### Signatures
+
+- Extract attestation text as one block  
+- Extract names from signature section  
+- `signature_present` = true only if actual signature exists  
+- Extract date only if visible  
+
+---
+
+## Address Normalization
+
+- For address fields ONLY:  
+  convert multi-line addresses into comma-separated format  
+
+---
+
+## Missing Sections
+
+- Some documents may not contain all sections  
+- Leave missing sections empty (never invent data)  
+
+---
+
+## Quality Bar
+
+- Be conservative  
+- Extract tables accurately  
+- Never mix sections  
+- Never hallucinate  
+
+---
+
+## Final Output
+
+- Return ONLY valid JSON  
+- No explanations  
+- No markdown in output  
+- Do not add or rename keys  
+- Do not merge sections  

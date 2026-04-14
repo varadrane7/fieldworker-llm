@@ -1,0 +1,571 @@
+{
+  "document_type": "New Jersey Individualized Service Plan (NJISP)",
+  "plan_id": "8.04",
+  "customer_information": {
+    "first_name": "Christopher",
+    "last_name": "Breuninger",
+    "customer_id": "308668",
+    "date_of_birth": "5/7/1991",
+    "age": "31 yrs.",
+    "gender": "Male",
+    "county": "Burlington",
+    "program": "Supports Program",
+    "medicaid_id": "032081365501",
+    "medicaid_type": "Categorically Needy Disability Assistance SSI Money Payment",
+    "ddd_status": "Eligible For DDD Services",
+    "waiver_enrollment_date": "01/19/2018",
+    "contact_details": {
+      "address": "3 Telford Ln, Mt Laurel NJ 08054",
+      "home_phone": "856.722.1743",
+      "work_phone": "N/A",
+      "cell_phone": "N/A",
+      "email": "tracybreuninger@comcast.net"
+    }
+  },
+  "guardianship_contacts": [
+    {
+      "name": "Galen Breuninger",
+      "relationship": "Biological Parents",
+      "contact_details": {
+        "address": "3 Telford Ln, Mount Laurel, NJ 08054",
+        "home_phone": "856.722.1743",
+        "work_phone": "N/A",
+        "cell_phone": "856.952.6310",
+        "email": "galenb418@comcast.net"
+      }
+    },
+    {
+      "name": "Tracy Breuninger",
+      "relationship": "Biological Mother",
+      "contact_details": {
+        "address": "3 Telford Ln, Mount Laurel, NJ 08054",
+        "home_phone": "856.722.1743",
+        "work_phone": "N/A",
+        "cell_phone": "609.923.7489",
+        "email": "tracybreuninger@comcast.net"
+      }
+    }
+  ],
+  "emergency_contacts": [
+    {
+      "priority": "1",
+      "name": "Galen Breuninger",
+      "relationship": "Biological Parents",
+      "contact_details": {
+        "primary_phone": "856.952.6310",
+        "secondary_phone": "856.722.1743"
+      }
+    },
+    {
+      "priority": "2",
+      "name": "Tracy Breuninger",
+      "relationship": "Biological Mother",
+      "contact_details": {
+        "primary_phone": "609.923.7489",
+        "secondary_phone": "856.722.1743"
+      }
+    },
+    {
+      "priority": "3",
+      "name": "Bernadette Breununger",
+      "relationship": "Sister",
+      "contact_details": {
+        "primary_phone": "609.923.7490",
+        "secondary_phone": "N/A"
+      }
+    }
+  ],
+  "medical_practitioners": [
+    {
+      "name": "Kathryn Davis",
+      "specialty": "Neurology",
+      "phone_number": "215.349.5166",
+      "notes": ""
+    },
+    {
+      "name": "Dennis Miller",
+      "specialty": "Optometrist",
+      "phone_number": "609.714.8761",
+      "notes": ""
+    },
+    {
+      "name": "Lois Browning",
+      "specialty": "Dental-General dental practice",
+      "phone_number": "609.953.7123",
+      "notes": ""
+    }
+  ],
+  "preferred_hospital": {
+    "name": "University of Pennsylvania Hospital",
+    "contact_details": {
+      "address": "3400 Spruce St, Philadelphia, PA 19104",
+      "phone_number": "215.662.4000"
+    },
+    "notes": ""
+  },
+  "primary_care_physician": {
+    "name": "Gary Shapiro",
+    "contact_details": {
+      "address": "204 Ark Rd, Virtua Family Practice, Mount Laurel, NJ 08054",
+      "phone_number": "856.778.4756"
+    },
+    "notes": ""
+  },
+  "administrative_service_organization": {
+    "name": "N/A",
+    "cm_name": "N/A",
+    "id_group": "N/A / N/A",
+    "contact_details": {
+      "cell_phone": "N/A",
+      "email": "N/A"
+    }
+  },
+  "managed_care_organization": {
+    "name": "United Health Care",
+    "cm_name": "Mary Helf",
+    "id_group": "032081365501 / na",
+    "contact_details": {
+      "cell_phone": "763.361.0041",
+      "email": "mary_helf@uhc.com"
+    }
+  },
+  "private_insurance": {
+    "name": "Aetna",
+    "cm_name": "N/A",
+    "id_group": "ID W038794713 / 865452-017-00035",
+    "contact_details": {
+      "cell_phone": "800.847.8982",
+      "email": "N/A"
+    }
+  },
+  "diagnosis_information": {
+    "diagnoses": [
+      {
+        "diagnosis_type": "Primary",
+        "icd_code": "F84.0",
+        "description": "Autistic Disorder (Childhood Autism, Infantile Psychosis, Kanner's Syndrome)"
+      },
+      {
+        "diagnosis_type": "Secondary",
+        "icd_code": "F71",
+        "description": "Moderate Intellectual Disability"
+      }
+    ]
+  },
+  "support_coordination_company": {
+    "company_name": "Disability Services And Advocacy, Llc",
+    "company_phone": "732.238.6133",
+    "company_email": "williamsengland@dsausa.net",
+    "sc_name": "JENNIFER DEMARCO",
+    "sc_email": "jennifer.demarco@dsausa.net",
+    "scs_name": "Laura Sproule",
+    "scs_email": "laura.sproule@dsausa.net"
+  },
+  "provider_information": {
+    "provider_name": "",
+    "billing_npi": "",
+    "provider_phone": "",
+    "provider_fax": "",
+    "provider_email": "",
+    "provider_address": ""
+  },
+  "service_authorizations": [
+    {
+      "service_name": "Day Habilitation",
+      "procedure_code": "T2021HIUQ",
+      "procedure_tier": "Tier C",
+      "reference": "PCPT",
+      "start_date": "02/03/2023",
+      "end_date": "02/28/2023",
+      "total_units": "180",
+      "total_cost": "$948.60",
+      "rate": "$5.27",
+      "unit_type": "15 Min",
+      "frequency": "Weekly",
+      "service_location": "1721 Springdale Road, Cherry Hill, NJ 08003",
+      "provider_name": "Jewish Family & Children's Services of Southern NJ",
+      "service_note": "Tops-2 days per week",
+      "claims_information": "Medicaid",
+      "associated_goals": [
+        {
+          "outcome_number": "1",
+          "outcome_description": "Christopher will work on participation and employment skills."
+        }
+      ]
+    },
+    {
+      "service_name": "Day Habilitation",
+      "procedure_code": "T2021HIUQ",
+      "procedure_tier": "Tier C",
+      "reference": "PCPT",
+      "start_date": "04/16/2023",
+      "end_date": "02/02/2024",
+      "total_units": "3024",
+      "total_cost": "$15936.48",
+      "rate": "$5.27",
+      "unit_type": "15 Min",
+      "frequency": "Weekly",
+      "service_location": "1930 Route 70 E Unit 3940, Cherry Hill, NJ 08003",
+      "provider_name": "LifeZone LLC",
+      "service_note": "LifeZone-3 days per week",
+      "claims_information": "Medicaid",
+      "associated_goals": [
+        {
+          "outcome_number": "1",
+          "outcome_description": "Christopher will work on participation and employment skills."
+        }
+      ]
+    },
+    {
+      "service_name": "Community Based Supports",
+      "procedure_code": "H2021HI",
+      "procedure_tier": "CBS",
+      "reference": "PCPT",
+      "start_date": "02/03/2023",
+      "end_date": "02/02/2024",
+      "total_units": "776",
+      "total_cost": "$6727.92",
+      "rate": "$8.67",
+      "unit_type": "15 Min",
+      "frequency": "Weekly",
+      "service_location": "Home",
+      "provider_name": "Durand Inc.",
+      "service_note": "Parent hire. This service is EVV exempt, staff is a full-time live-in caregiver. zero out after 4/30\nEVV Description:\n• EVV Status: No. Staff is full time live in caregiver",
+      "claims_information": "Medicaid",
+      "associated_goals": [
+        {
+          "outcome_number": "2",
+          "outcome_description": "Christopher will continue to work on independence skills both at home and in the community."
+        }
+      ]
+    },
+    {
+      "service_name": "Community Based Supports",
+      "procedure_code": "N/A",
+      "procedure_tier": "N/A",
+      "reference": "Assessment",
+      "start_date": "02/03/2023",
+      "end_date": "02/02/2024",
+      "total_units": "940",
+      "total_cost": "N/A",
+      "rate": "N/A",
+      "unit_type": "Hour(s)",
+      "frequency": "Weekly",
+      "service_location": "N/A",
+      "provider_name": "Natural/Generic",
+      "service_note": "PPP-18 hours",
+      "claims_information": "N/A",
+      "associated_goals": [
+        {
+          "outcome_number": "2",
+          "outcome_description": "Christopher will continue to work on independence skills both at home and in the community."
+        }
+      ]
+    },
+    {
+      "service_name": "Community Based Supports",
+      "procedure_code": "H2021HI52",
+      "procedure_tier": "CBS Self Directed Employee (SDE)",
+      "reference": "PCPT",
+      "start_date": "04/21/2023",
+      "end_date": "02/02/2024",
+      "total_units": "2800",
+      "total_cost": "$19544.00",
+      "rate": "$6.98",
+      "unit_type": "15 Min",
+      "frequency": "Weekly",
+      "service_location": "Home",
+      "provider_name": "Public Partnerships, LLC",
+      "service_note": "sde\nSDE EVV Description:\n• Galen Breuninger. EVV Status: No. Not required due to staff being live in caregiver",
+      "claims_information": "FI(Agency)",
+      "associated_goals": [
+        {
+          "outcome_number": "2",
+          "outcome_description": "Christopher will continue to work on independence skills both at home and in the community."
+        }
+      ]
+    },
+    {
+      "service_name": "Fiscal Management Services (FI)",
+      "procedure_code": "T2040HI22",
+      "procedure_tier": "Financial management, self-directed, waiver",
+      "reference": "PCPT",
+      "start_date": "04/21/2023",
+      "end_date": "04/19/2024",
+      "total_units": "1",
+      "total_cost": "$172.00",
+      "rate": "$172.00",
+      "unit_type": "Month(s)",
+      "frequency": "Weekly",
+      "service_location": "Community",
+      "provider_name": "Public Partnerships, LLC",
+      "service_note": "Workers' Compensation",
+      "claims_information": "Medicaid",
+      "associated_goals": [
+        {
+          "outcome_number": "2",
+          "outcome_description": "Christopher will continue to work on independence skills both at home and in the community."
+        }
+      ]
+    }
+  ],
+  "prior_authorization_and_distribution": [],
+  "rate_change": [],
+  "medication_info": [
+    {
+      "order": "1",
+      "medication_name": "Trileptal (Oral Pill)",
+      "dosage_info": "600 mg tab",
+      "frequency_info": "1 pm pil",
+      "medication_notes": "Chris takes for seizures. Parents prompt him to take the pill. Chris takes 750 mg in the morning and 900 mg in the evening. Discrepancy with NJCAT-states he self medicates.",
+      "self_medication": "No"
+    },
+    {
+      "order": "2",
+      "medication_name": "Vitamin D (Oral Pill)",
+      "dosage_info": "2000 unt cap",
+      "frequency_info": "1 per day",
+      "medication_notes": "Chris takes 1 50 mcg Vitamin D in conjunction with Trileptal to help prevent loss in bone density, side effect of seizure medication.",
+      "self_medication": "No"
+    }
+  ],
+  "customer_goals": [
+    {
+      "outcome_number": "1",
+      "outcome_description": "Christopher will work on participation and employment skills."
+    },
+    {
+      "outcome_number": "2",
+      "outcome_description": "Christopher will continue to work on independence skills both at home and in the community."
+    }
+  ],
+  "customer_needs": {
+    "health_and_nutrition_needs": [
+      {
+        "category_name": "Allergies",
+        "category_description": "",
+        "subcategories": [
+          {
+            "subcategory_name": "Environmental",
+            "need_description": "Chris has mild seasonal allergies which cause a runny nose and itchy eyes. He does not take medications for it."
+          },
+          {
+            "subcategory_name": "Medication - TRILEPTAL",
+            "need_description": "Chris had a seizure after taking Benadryl, his doctors do not want him to take Benadryl in any form. If Chris were to take Benadryl notify parents and monitor for symptoms."
+          }
+        ]
+      },
+      {
+        "category_name": "Dietary",
+        "category_description": "",
+        "subcategories": [
+          {
+            "subcategory_name": "Mealtime supervision",
+            "need_description": "Mealtime supervision - Chris will eat whatever he is given If he is drinking a lot of water during the meal it means he does not like what he is eating. He is chasing the food down with water. A support worker should ensure he does not eat food he does not like without a good reason."
+          }
+        ]
+      },
+      {
+        "category_name": "Health Hazards",
+        "category_description": "",
+        "subcategories": [
+          {
+            "subcategory_name": "Other",
+            "need_description": "Chris does not show his emotions. When he was being burned by the candle he did not yell out. Parents are concerned because he does not seem to feel pain or changes in temperature as quickly as others.\nChris's vision is in the normal range with or without correction.\nChris is currently taking 1 mg of Melatonin each night. The medication is over the counter and recommended by his neurologists. This is to help Chris fall asleep and stay asleep."
+          },
+          {
+            "subcategory_name": "Seizures",
+            "need_description": "Chris takes medication to control his seizures twice a day. His parents prompt him to take medication. They will have the medication ready for Chris and use timers to remind when to dispense medication. Differs from NJCAT which states he is independent with his medicine.\nChristopher had a seizure in December 2019. His seizures are primarily vocal, hiccup sounds. He is being monitored by his neurologist.\nIn case of a seizure Chris should be seated to make sure he does not injure himself. The neurologist should be notified in the next day following a seizure. If one last longer then 30 minutes 911 should be called."
+          }
+        ]
+      },
+      {
+        "category_name": "Self-Care",
+        "category_description": "",
+        "subcategories": [
+          {
+            "subcategory_name": "Adjusting water temperature",
+            "need_description": "He can adjust the water temperature. There was an incident in August when Chris adjusted the water too hot. His parents now monitor water temperature and have Christopher shower with the door open. Christopher needs reminders when to shower and prompts to stop showering. Timers do not prevent him from showering too long."
+          },
+          {
+            "subcategory_name": "Blowing nose",
+            "need_description": "Chris is independent in blowing his nose."
+          },
+          {
+            "subcategory_name": "Chewing & swallowing",
+            "need_description": "He is independent in chewing and swallowing."
+          },
+          {
+            "subcategory_name": "Dressing",
+            "need_description": "He needs reminders to finish dressing.\nChris needs supervision to physically dress, choose clothes and tie his shoelaces or fasten the velcro straps."
+          },
+          {
+            "subcategory_name": "Drinking on own",
+            "need_description": "Chris needs supervision (mainly verbal prompts) when he is drinking. If he seems to be drinking a lot during a meal he may be trying to chase down food he does not like with water. Chris also needs to be monitored when drinking hot liquids, like hot chocolate. He will drink too fast, like it is cold."
+          },
+          {
+            "subcategory_name": "Feeding self",
+            "need_description": "He is independent with feeding himself. Christopher will eat food he does not like if prompted to eat the food."
+          },
+          {
+            "subcategory_name": "Other",
+            "need_description": "Chris has difficulty understanding time. Others assist Chris with associating events with time. He needs full assistance from caregivers to remember events that happened a month or more ago. Caregivers prompt Chris to follow his daily routine, such as what happens in the morning, afternoon and evening. To help him follow a routine his family uses a calendar with his activities on it. Chris knows how to read simple words and he understand pictures. Chris's family verbally prompt him when it is his time to do an activity. Chris relies on verbal prompts and his calendar. However Chris does not understand what it means to be ready to do something, like get in the car, in five minutes. He needs full assistance to understand how long five minutes is. Chris responds best to verbal prompts to do something at the time the prompt is given.\nIn terms of decision making, Chris's parents make all of the decisions for him. His parents can tell by his behavior if he likes an activity or not and they strive to provide him a full and enriching life.\nChris needs mainly supervision when moving around a familiar setting, such as home.\nHe needs lots of assistance to groom his hair. He needs mainly supervision in prompts to wash his face. Chris needs supervision when he gets out of the bath to make sure he is dry before he dresses."
+          },
+          {
+            "subcategory_name": "Toileting - bladder",
+            "need_description": "He needs reminders to flush, wash hands and turn on and off bathroom light."
+          },
+          {
+            "subcategory_name": "Toileting - bowel",
+            "need_description": "Chris needs reminders to wash hands, flush and turn bathroom light on and off."
+          },
+          {
+            "subcategory_name": "Using microwave",
+            "need_description": "Christopher needs prompts when using the microwave."
+          },
+          {
+            "subcategory_name": "Using stove",
+            "need_description": "Chris must be closely supervised if he uses the stove. He needs lots of prompts and close supervision. A support worker must be very cautious. Parents encourage him to learn on to operate safely."
+          },
+          {
+            "subcategory_name": "Washing hands",
+            "need_description": "Chris needs reminders to wash hands"
+          }
+        ]
+      }
+    ],
+    "safety_and_support_needs": [
+      {
+        "category_name": "Behavior",
+        "category_description": "",
+        "subcategories": [
+          {
+            "subcategory_name": "Fears/Phobias",
+            "need_description": "Chris has a fear of fire due to his being burned by a candle when he was younger."
+          },
+          {
+            "subcategory_name": "Other",
+            "need_description": "Chris flaps his hands and rocks his body. He has been exhibiting this behavior since 2 years old. This behavior has increased since covid begun due to decrease in daily activities. He will stop when prompted, but he will go back to this activity. He has never been able to stop fidgeting for a long period of time. Verbal prompts to stop work for a short period of time. Redirecting him to a high interest activity helps. Parents also try to keep him occupied at all times with walks, puzzles, card games, and other activities. He likes surfing the internet and going out to eat. NJCAT states no rule breaking behavior and no disruptive behavior.\nChris is non-verbal and makes noises. This has increased since the beginning of covid. He will stop for awhile upon request, but he will start making the noises again. He repeats the same noises over and over again. Distracting him to a high interest activity may help. Differs from NJCAT which states no rule breaking behavior and no disruptive behavior.\nChris tends to look away when others are talking to him. It is hard to tell how he is feeling by his facial expression. He primarily prefers to spend his time alone. He seems uncomfortable being part of a group. He has difficulty taking turns in a group activity. He has a hard time telling how others are feeling.\nChris likes to repeat the same activities over and over again like doing word searches and looking up youtube videos. He likes all things Disney.\nChris's has been treated inappropriately by others. He has been bullied by his classmates and abused by his teachers. Mom reports that at field day a exasperated teacher dragged him around the field and broke a bone in his foot. He was abandoned on the school bus after the driver completed his afternoon drop off. ( He was rescued after his mom complained that he did not come home from school.) A teacher's aide who resigned her job told his mom that Chris had been cursed out and degraded by the classroom teacher. A support worker needs to understand that because Chris is non verbal he is susceptible to being abused. Chris needs to be watched so that people do not lose patience with his behaviors and harm him."
+          }
+        ]
+      },
+      {
+        "category_name": "Communication",
+        "category_description": "",
+        "subcategories": [
+          {
+            "subcategory_name": "Non-verbal",
+            "need_description": "Chris will say some words but only if initiated by others."
+          }
+        ]
+      },
+      {
+        "category_name": "Religious/Cultural",
+        "category_description": "",
+        "subcategories": [
+          {
+            "subcategory_name": "Religious",
+            "need_description": "Christopher is Roman Catholic. He was attending St. John Neumann Church at 560 Walton Avenue in Mount Laurel New Jersey 08054 with his family. They have stopped going to mass due to covid."
+          }
+        ]
+      },
+      {
+        "category_name": "Support Settings",
+        "category_description": "",
+        "subcategories": [
+          {
+            "subcategory_name": "Community",
+            "need_description": "A support worker must keep a close eye on Chris at work or in the community. He must be in their line of sight. He may drink from a stranger's glass. He may take something from a store. He does not understand that he must buy the item, differs from NJ Cat which says no rule breaking behavior.\nIn the community Chris cannot identify an emergency. If something happens you cannot assume Chris knows to run/leave. You must take him by the hand and lead him away from the emergency.\nAt home, work or in the community Chris must be watched around candles. In 2007 he burned himself badly on a candle. He could not communicate that his arm hurt and was burning. He is afraid around candles. A support worker should keep him away from candles. Whenever Chris pulls his shoulders away or his body language shows he is resisting going in a certain direction do not push him. He acts this way around candles, because of the bad burn he got when he was about 16 years old.\nIf Chris upper extremities are convulsing with his body and he is making noises that sound like violent hiccups he is having a seizure. You should call 911, and make sure he does not hurt himself. Chris takes seizure medication twice a day every day. He needs a prompt to take his medicine, differs from NJ Cat.\nChris likes to know what activities are scheduled for the day. It helps prepare him.\nAt Tops Chris is always accompanied in the community. Chris likes word search books, games, and doing art projects. Chris's parents help him make major purchases."
+          }
+        ]
+      },
+      {
+        "category_name": "Safety and Support Needs",
+        "category_description": "",
+        "subcategories": [
+          {
+            "subcategory_name": "N/A",
+            "need_description": "Parents require that the driver control the door in any car/van Christopher occupies. When he was younger Chris had the urge to open car doors, so as a protective measure his parents want his support staff to keep doors locked. Differs from NJCAT which says his environment has not be structured to prevent behaviors within the last six months.\nWhen Chris is in a new situation or meeting new people he may become anxious and agitated. He rubs his hands, his body tenses and he rubs his nose with hid fist when he is anxious and agitated. A support worker should redirect Chris or remove him from the situation to do an activity he enjoys like Yahtzee.\nChris makes inappropriate noises. Chris is non-verbal an he makes vocalizations that disturb others. Mom says he attracts negative attention from others in public. A support worker should tell him to stop. He will listen but he may resume the activity after a while. A support worker must be patient with Chris. Differs from NJCAT which says he does not disrupt activities of others.\nParents have learned of instances where other individuals have verbally belittled and ridiculed Chris for his behavior. Chris has never been aggressive when targeted by others."
+          }
+        ]
+      },
+      {
+        "category_name": "Sounds",
+        "category_description": "",
+        "subcategories": [
+          {
+            "subcategory_name": "N/A",
+            "need_description": "He covers his ears in public sometimes. He may start to hum to try to block the noise. Parents have tried The Listening Program with Chris, but it did not appear to help."
+          }
+        ]
+      },
+      {
+        "category_name": "Mobility",
+        "category_description": "",
+        "subcategories": [
+          {
+            "subcategory_name": "Other",
+            "need_description": "Christopher is independent in all areas of mobility. He can walk without difficulty, pull himself up, roll over, go up and down stairs, pick up small objects and transfer an object from hand to hand. Chris can crawl, creep and scoot when needed. He can sit independently without support for long periods of time.\nChris needs lots of hands on assistance to make routine purchases, use money and make change. He needs lots of hands on assistance to choose food when shopping for a simple meal. He needs a lot of assistance when ordering food in public.\nChris's family drive him where he needs to go. He has never used public transportation.\nChris needs full support from care givers to make purchases and handle money. He does not understand money. A support worker needs to handle his money and make sure he is not taken advantage of in the community or at work"
+          }
+        ]
+      },
+      {
+        "category_name": "Home",
+        "category_description": "",
+        "subcategories": [
+          {
+            "subcategory_name": "N/A",
+            "need_description": "At home , work or in the community a support worker needs to be aware that Chris has limited communication for emotion or pain. A support worker needs to watch his body and face to see if he is sick or in pain. When Chris's face is pale and his eyes are glassy he may be sick.\nChristopher's parents know that in case of an emergency they must notify Chris and make sure he evacuates the house. The home has four separate exits on the first floor. The second floor has two ways to access a porch roof from which individuals can jump from to escape a fire. Christopher's bedroom window has a sticker that alerts firepersons that an autistic individual resides in that room. Christopher is prompt dependent and may not evacuate the house unless someone tells him to do so.\nChris needs lots of assistance and hands on help to make his bed, clean his room and do his laundry. He needs lots of assistance to care for his own clothes, such as folding and putting them away. Christopher requires a lot of hands on assistance to prepare foods which do not require cooking."
+          }
+        ]
+      },
+      {
+        "category_name": "Work",
+        "category_description": "",
+        "subcategories": [
+          {
+            "subcategory_name": "N/A",
+            "need_description": "Chris will not use the microwave at home or work unless someone asks him if he wants to heat up his food. At work a support worker needs to ask Chris if he wants to heat up his lunch. Chris can heat it up on his own as long as the support worker keeps an eye on him. He also eats lunch with friends in a room where the staff monitors but may leave for several minutes throughout the hour.\nAt the Tops program Chris uses the restroom independently. Staff would check on him if he did not return to the room in several minutes. Chris needs verbal directions and staff prompts to follow evacuation procedures during drills.\nChris needs staff assistance for virtual online activities. Supports needed include logging onto classes, monitoring throughout lessons and prompts when it is time to do a work related activity. He relies on verbal prompts and calendars."
+          }
+        ]
+      }
+    ]
+  },
+  "employment_and_voting": {
+    "employment_status": "Unemployed - Experience/Training",
+    "employment_history_or_context": "Christopher is currently attending LifeZone day hab. In High School he volunteered at a local Hospital, and at a Pride Paws pet store in Medford, New Jersey. He stuffed envelopes at a music store in Moorestown New Jersey during High School. Family has not gone back to DVRS since DVRS has deemed him not ready for competitive employment.",
+    "employment_plan": "Activities you may consider to assist you in exploring employment options include but are not limited to the following:\nSituational assessments (or vocational evaluations) and/or pre-placement services through DVRS\nIf DVRS services are not available, use DDD Career Planning, Supported Employment, or Prevocational Training services, as needed\nUtilize the One-Stop Career Center to access assistance in identifying a career path.Contact your local DVRS office and set up a meeting to determine eligibility for services Visit your One-Stop Career Center to learn about the services they have to offer and access those services that apply\nDiscuss getting a situational assessment through DVRS or (if unavailable from DVRS) through DDD Supported Employment services.",
+    "voting_plan": "Registered to Vote. Planning to Vote Needs supports to vote."
+  },
+  "team_members_present": [
+    {
+      "name": "Christopher Breuninger",
+      "relationship_or_agency": "Self",
+      "primary_contact": "856.722.1743"
+    },
+    {
+      "name": "JENNIFER DEMARCO",
+      "relationship_or_agency": "Support Coordinator",
+      "primary_contact": "856.803.9224"
+    },
+    {
+      "name": "Tracy Breuninger",
+      "relationship_or_agency": "Biological Mother",
+      "primary_contact": "609.923.7489"
+    }
+  ],
+  "authorizations_and_signatures": {
+    "attestation_text": "My signature upon this document attests to the following:\n• I have participated in the development of this service plan\n• I have had the ability to invite team members of my choosing to assist with the planning process\n• I agree with the content of this service plan\n• I had the ability to choose services and providers in this service plan based on availability\n• I am aware of my rights and responsibilities as a participant of this program\n• I have chosen to receive services in a Home and Community Based setting instead of an institutional setting\n• The importance of annual medical and dental exams was discussed\n• I have been made aware of various setting options including non-disability specific settings\n• If receiving services in a residential setting, I have been provided the option for a private unit based on my resources available for room and board",
+    "support_coordinator_review_note": "The Support Coordinator has reviewed the NJCAT on 12/12/2022 and level of care has been met.",
+    "participant": {
+      "name": "Christopher Breuninger",
+      "signature_present": false,
+      "date": ""
+    },
+    "guardian_legal_representative": {
+      "name": "",
+      "signature_present": false,
+      "date": ""
+    }
+  }
+}

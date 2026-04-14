@@ -1,0 +1,433 @@
+{
+  "document_type": "New Jersey Individualized Service Plan (NJISP)",
+  "plan_id": "3.00",
+  "customer_information": {
+    "first_name": "Madison",
+    "last_name": "Hill",
+    "customer_id": "685838",
+    "date_of_birth": "10/12/1999",
+    "age": "23 yrs.",
+    "gender": "Female",
+    "county": "Burlington",
+    "program": "Supports Program",
+    "medicaid_id": "032081868301",
+    "medicaid_type": "Categorically Needy Disability Assistance Medicaid Only - No Money Payment",
+    "ddd_status": "Eligible For DDD Services",
+    "waiver_enrollment_date": "04/13/2021",
+    "contact_details": {
+      "address": "3902 Elberta Ln, Marlton NJ 08053",
+      "home_phone": "N/A",
+      "work_phone": "N/A",
+      "cell_phone": "856.701.8332",
+      "email": "de0705@aol.com"
+    }
+  },
+  "guardianship_contacts": [
+    {
+      "name": "Dawn Toomey",
+      "relationship": "Biological Mother",
+      "contact_details": {
+        "address": "3902 Elberta Ln, Marlton, NJ 08053",
+        "home_phone": "N/A",
+        "work_phone": "N/A",
+        "cell_phone": "856.701.8332",
+        "email": "DE0705@aol.com"
+      }
+    }
+  ],
+  "emergency_contacts": [
+    {
+      "priority": "1",
+      "name": "Dawn Toomey",
+      "relationship": "Biological Mother",
+      "contact_details": {
+        "primary_phone": "856.701.8332",
+        "secondary_phone": "N/A"
+      }
+    },
+    {
+      "priority": "2",
+      "name": "Wascar Mercedes",
+      "relationship": "Other",
+      "contact_details": {
+        "primary_phone": "646.626.3636",
+        "secondary_phone": "N/A"
+      }
+    }
+  ],
+  "medical_practitioners": [
+    {
+      "name": "Eastern Dental",
+      "specialty": "Dental-General dental practice",
+      "phone_number": "856.334.0811",
+      "notes": ""
+    },
+    {
+      "name": "Saifuddin Mama",
+      "specialty": "Gynecology",
+      "phone_number": "856.325.6622",
+      "notes": ""
+    }
+  ],
+  "preferred_hospital": {
+    "name": "Virtua - West Jersey Hospital Voorhees",
+    "contact_details": {
+      "address": "100 Bowman Drive, Voorhees, NJ 08043",
+      "phone_number": "856.247.3200"
+    },
+    "notes": ""
+  },
+  "primary_care_physician": {
+    "name": "Rina Zuniga",
+    "contact_details": {
+      "address": "141Rt 70, Ste E, Marlton, NJ 08053",
+      "phone_number": "856.925.7373"
+    },
+    "notes": ""
+  },
+  "administrative_service_organization": {
+    "name": "N/A",
+    "cm_name": "N/A",
+    "id_group": "N/A / N/A",
+    "contact_details": {
+      "cell_phone": "N/A",
+      "email": "N/A"
+    }
+  },
+  "managed_care_organization": {
+    "name": "Horizon Nj Health",
+    "cm_name": "Gwendolyn Barr",
+    "id_group": "032081868301 / na",
+    "contact_details": {
+      "cell_phone": "800.682.9094 x 53635",
+      "email": "Gwendolyn_Barr@Horizonnjhealth.com"
+    }
+  },
+  "private_insurance": {
+    "name": "N/A",
+    "cm_name": "N/A",
+    "id_group": "N/A / N/A",
+    "contact_details": {
+      "cell_phone": "N/A",
+      "email": "N/A"
+    }
+  },
+  "diagnosis_information": {
+    "diagnoses": [
+      {
+        "diagnosis_type": "Primary",
+        "icd_code": "Q02",
+        "description": "Microcephaly"
+      },
+      {
+        "diagnosis_type": "Secondary",
+        "icd_code": "F70",
+        "description": "Mild Intellectual Disability"
+      }
+    ]
+  },
+  "support_coordination_company": {
+    "company_name": "Disability Services And Advocacy, Llc",
+    "company_phone": "732.238.6133",
+    "company_email": "williamsengland@dsausa.net",
+    "sc_name": "JENNIFER DEMARCO",
+    "sc_email": "jennifer.demarco@dsausa.net",
+    "scs_name": "Laura Sproule",
+    "scs_email": "laura.sproule@dsausa.net"
+  },
+  "provider_information": {
+    "provider_name": "",
+    "billing_npi": "",
+    "provider_phone": "",
+    "provider_fax": "",
+    "provider_email": "",
+    "provider_address": ""
+  },
+  "service_authorizations": [
+    {
+      "service_name": "Day Habilitation",
+      "procedure_code": "T2021HIUR",
+      "procedure_tier": "Tier B",
+      "reference": "PCPT",
+      "start_date": "05/04/2023",
+      "end_date": "05/02/2024",
+      "total_units": "5712",
+      "total_cost": "$24333.12",
+      "rate": "$4.26",
+      "unit_type": "15 Min",
+      "frequency": "Weekly",
+      "service_location": "244 Route 38 West, Moorestown, NJ 08057",
+      "provider_name": "Kingsway Services, Inc.",
+      "service_note": "Kingsway day program",
+      "claims_information": "Medicaid",
+      "associated_goals": [
+        {
+          "outcome_number": "1",
+          "outcome_description": "Madison will continue to work on employment skills."
+        }
+      ]
+    },
+    {
+      "service_name": "Community Based Supports",
+      "procedure_code": "H2021HI",
+      "procedure_tier": "CBS",
+      "reference": "PCPT",
+      "start_date": "05/04/2023",
+      "end_date": "05/02/2024",
+      "total_units": "1484",
+      "total_cost": "$12866.28",
+      "rate": "$8.67",
+      "unit_type": "15 Min",
+      "frequency": "Weekly",
+      "service_location": "Home",
+      "provider_name": "Githens Center",
+      "service_note": "Githen's parent hire. EVV not required because mother is live in caregiver.\nEVV Description:\n• EVV Status: No. live in caregiver",
+      "claims_information": "Medicaid",
+      "associated_goals": [
+        {
+          "outcome_number": "2",
+          "outcome_description": "Madison will continue to work on independence at home and in the community."
+        }
+      ]
+    }
+  ],
+  "prior_authorization_and_distribution": [],
+  "rate_change": [],
+  "medication_info": [
+    {
+      "order": "1",
+      "medication_name": "Albuterol (Inhalant)",
+      "dosage_info": "0.25 mg/ml sol",
+      "frequency_info": "as needed",
+      "medication_notes": "Albuterol nebulizer taken as needed for asthma.",
+      "self_medication": "No"
+    },
+    {
+      "order": "2",
+      "medication_name": "Benadryl (Oral Liquid)",
+      "dosage_info": "12.5 mg/5ml sol",
+      "frequency_info": "as needed",
+      "medication_notes": "Taken as needed at bedtime for seasonal allergies.",
+      "self_medication": "No"
+    },
+    {
+      "order": "3",
+      "medication_name": "Claritin (Oral-Liquid)",
+      "dosage_info": "1 mg/ml syrup",
+      "frequency_info": "as needed",
+      "medication_notes": "taken as needed for seasonal allergies",
+      "self_medication": "No"
+    },
+    {
+      "order": "4",
+      "medication_name": "Zyrtec (Oral Liquid)",
+      "dosage_info": "5 mg/5ml sol",
+      "frequency_info": "as needed",
+      "medication_notes": "Taken as needed for seasonal allergies",
+      "self_medication": "No"
+    },
+    {
+      "order": "5",
+      "medication_name": "Junel Fe 1/20 28 Day (Pack)",
+      "dosage_info": "mixed pack",
+      "frequency_info": "1 time per day",
+      "medication_notes": "Madison takes one birth control pill per day to regulate her menstrual cycle.",
+      "self_medication": "No"
+    }
+  ],
+  "customer_goals": [
+    {
+      "outcome_number": "1",
+      "outcome_description": "Madison will continue to work on employment skills."
+    },
+    {
+      "outcome_number": "2",
+      "outcome_description": "Madison will continue to work on independence at home and in the community."
+    }
+  ],
+  "customer_needs": {
+    "health_and_nutrition_needs": [
+      {
+        "category_name": "Allergies",
+        "category_description": "",
+        "subcategories": [
+          {
+            "subcategory_name": "Environmental",
+            "need_description": "Madison has seasonal allergies which cause runny nose and itchy eyes. She will take over the counter Benadryl or Zyrtec as needed."
+          }
+        ]
+      },
+      {
+        "category_name": "Dietary",
+        "category_description": "",
+        "subcategories": [
+          {
+            "subcategory_name": "None",
+            "need_description": "None - No Reported Dietary Needs"
+          }
+        ]
+      },
+      {
+        "category_name": "Health Hazards",
+        "category_description": "",
+        "subcategories": [
+          {
+            "subcategory_name": "Other",
+            "need_description": "Madison has asthma which presents seasonally. She has a nebulizer with albuterol that she will use as needed. This is treated by her primary care physician.\nMadison has not received physical, speech and occupational therapies in the past 3 months, differs from NJ Cat."
+          }
+        ]
+      },
+      {
+        "category_name": "Self-Care",
+        "category_description": "",
+        "subcategories": [
+          {
+            "subcategory_name": "Adjusting water temperature",
+            "need_description": "Madison is independent with adjusting water temperature."
+          },
+          {
+            "subcategory_name": "Blowing nose",
+            "need_description": "Madison needs lots of assistance with blowing her nose. She will not blow her nose unless prompted."
+          },
+          {
+            "subcategory_name": "Chewing & swallowing",
+            "need_description": "Madison is independent with chewing and swallowing."
+          },
+          {
+            "subcategory_name": "Dressing",
+            "need_description": "Madison can dress herself independently. She needs lots of assistance with tying shoes. She does not tie shoes herself, mom will help."
+          },
+          {
+            "subcategory_name": "Drinking on own",
+            "need_description": "Madison can drink on her own."
+          },
+          {
+            "subcategory_name": "Feeding self",
+            "need_description": "Madison can feed herself independently."
+          },
+          {
+            "subcategory_name": "Other",
+            "need_description": "Madison can remember events that happened a month or more ago, she knows her daily routine and associates events with past, present and future. Madison associates regular events with a specific hour. She can tell time on a digital clock but does would need assistance to understand the difference between 5 minutes before of after.\nMadison and her mother decide together how to spend time during the week. Others decide how to spend money, when to see friends, leave the house or go over someone else house. Others decide where to go, the movies, library, beach or park. Madison's mother will make plans for the day and then let Madison know what they are going to do."
+          },
+          {
+            "subcategory_name": "Other",
+            "need_description": "Madison can move around the home independently.\nShe needs mainly supervision with reminders to wash her face. Madison needs lots of assistance with combing her hair. She can brush but mom will brush and style her hair. Madison needs mainly supervision when drying her body. She will do herself but not always completely dry. Mom will check and help if needed."
+          },
+          {
+            "subcategory_name": "Toileting - bladder",
+            "need_description": "Madison needs mainly supervision with the restroom. She will sometimes need reminders to go."
+          },
+          {
+            "subcategory_name": "Toileting - bowel",
+            "need_description": "Madison needs mainly supervision with the restroom. She will sometimes need reminders."
+          },
+          {
+            "subcategory_name": "Using microwave",
+            "need_description": "Madison needs mainly supervision for the microwave. She knows how to heat some things up but will ask about other things."
+          },
+          {
+            "subcategory_name": "Using stove",
+            "need_description": "Mom cooks all meals that require the stove. Madison would need complete support to use the stove."
+          },
+          {
+            "subcategory_name": "Washing hands",
+            "need_description": "Madison needs mainly supervision with hand washing. She sometimes needs reminders."
+          }
+        ]
+      }
+    ],
+    "safety_and_support_needs": [
+      {
+        "category_name": "Behavior",
+        "category_description": "",
+        "subcategories": [
+          {
+            "subcategory_name": "Other",
+            "need_description": "Madison tends to look away when others are speaking to her. Others can not tell how she is feeling based on facial expressions. Madison prefers to spend time with others and is comfortable being part of a group. Madison shows enjoyment and sadness. She likes to do things with others and takes turns easily. Madison notices when others are upset. Madison words vary by subject and she likes to do a variety of activities. Madison does use some repetition, especially with her father. She will have the same conversation with him every time she speaks to him. She also tends to ask about things in the future. For example, she will at lunch time today she will ask what they are having for dinner tomorrow."
+          }
+        ]
+      },
+      {
+        "category_name": "Mobility",
+        "category_description": "",
+        "subcategories": [
+          {
+            "subcategory_name": "N/A",
+            "need_description": "Madison is independent in all areas of mobility. She can roll over, stand, go up and down stairs and transfer small objects. Madison can sit independently for five minutes or more and walk without assistance.\nMadison uses a communication device. She uses an app on her iPad. She will also take a picture to help communicate."
+          }
+        ]
+      },
+      {
+        "category_name": "Religious/Cultural",
+        "category_description": "",
+        "subcategories": [
+          {
+            "subcategory_name": "None",
+            "need_description": "No Reported Religious/Cultural Preference or Restriction"
+          }
+        ]
+      },
+      {
+        "category_name": "Support Settings",
+        "category_description": "",
+        "subcategories": [
+          {
+            "subcategory_name": "Community",
+            "need_description": "Madison requires someone to be with her when out in the community and needs line of sight supervision. She sometimes needs reminders to use the restroom before going out. She would require prompts in case of an emergency.\nMadison needs lots of assistance with prompting for choosing items she wants to buy, using money, making small purchases and counting change.\nMadison would need full support to use public transportation. Mother provides all transportation.\nMadison needs mainly supervision when choosing items for a simple meal. She has done this in school but mom does at home. She needs a lot of assistance when preparing meals that do not require cooking. She needs step by step prompts. When in school, Madison needs mainly supervision to order food in public. At home, mom orders food for Madison.\nAt Kingsway, Madison does not use money in the program and does not require any mobility assistance. When in the community Madison would require prompts in case of an emergency.\nMadison has access to food at any time during day program."
+          },
+          {
+            "subcategory_name": "Home",
+            "need_description": "Madison can be home for about 2-3 hours by herself. She has not been home alone overnight. She does have a cell phone and will call her mom if needed. She knows to leave the house and call 911 in case of an emergency.\nMadison needs supervision in prompts and reminders to make the bed. She needs reminders to clean her room. Mom does all laundry, Madison would need full assistance to do laundry. She has needs lots of assistance with folding and putting away clothes, mom mainly does this. Mom washes all dishes. Madison would need complete assistance to wash dishes, differs from NJ Cat."
+          }
+        ]
+      },
+      {
+        "category_name": "Support Settings",
+        "category_description": "",
+        "subcategories": [
+          {
+            "subcategory_name": "Work",
+            "need_description": "Dawn is currently working on an emergency plan for Madison's care.\nAt Kingsway, Madison will be given a verbal prompts during an evacuation.\nMadison would need supervision and reminders to stay on task while working. She may need verbal prompting when learning a new task. Madison would also need transportation to get to work."
+          }
+        ]
+      }
+    ]
+  },
+  "employment_and_voting": {
+    "employment_status": "Unemployed - No Experience/Training Madison attends Kingsway day program where she works on employment skills. She may be interested in pursing part time work in the future.",
+    "employment_history_or_context": "",
+    "employment_plan": "Continue thinking about the possibility of going to DVRS for employment services and supports\nConsider exploring employment options through Career Planning services\nConsider building skills or gaining work-related experiences through volunteer work by using Prevocational Training services\nConsider spending time learning more about employment/work through job touring, job shadowing, job clubs, and/or job sampling\nConsider watching videos, reading books, exploring the Internet for information about various jobs/career\nAdditional activities you may consider to assist you in exploring employment options include but are not limited to the following:\nSeek benefits counseling/planning through providers of this service, Supported Employment providers that offer benefits counseling services, the Social Security Administration, or other entities with expertise in this area.\nUse www.njdb101.org to assist in calculating your benefits\nDetermine whether WorkAbility (NJ's Medicaid buy-in program) is an option for you by DDS at 888-285-3036 or visiting www.state.nj.us/humanservices/dds/projects/discoverability.",
+    "voting_plan": "Not Registered to Vote Does Not Want to Register to Vote. Not Planning to Vote."
+  },
+  "team_members_present": [
+    {
+      "name": "Dawn Toomey",
+      "relationship_or_agency": "Biological Mother",
+      "primary_contact": "856.701.8332"
+    },
+    {
+      "name": "JENNIFER DEMARCO",
+      "relationship_or_agency": "Support Coordinator",
+      "primary_contact": "856.803.9224"
+    },
+    {
+      "name": "Madison Hill",
+      "relationship_or_agency": "Self",
+      "primary_contact": "856.701.8332"
+    }
+  ],
+  "authorizations_and_signatures": {
+    "attestation_text": "My signature upon this document attests to the following:\n• I have participated in the development of this service plan\n• I have had the ability to invite team members of my choosing to assist with the planning process\n• I agree with the content of this service plan\n• I had the ability to choose services and providers in this service plan based on availability\n• I am aware of my rights and responsibilities as a participant of this program\n• I have chosen to receive services in a Home and Community Based setting instead of an institutional setting\n• The importance of annual medical and dental exams was discussed\n• I have been made aware of various setting options including non-disability specific settings\n• If receiving services in a residential setting, I have been provided the option for a private unit based on my resources available for room and board",
+    "support_coordinator_review_note": "The Support Coordinator has reviewed the NJCAT on 3/27/2023 and level of care has been met.",
+    "participant": {
+      "name": "Madison Hill",
+      "signature_present": false,
+      "date": ""
+    },
+    "guardian_legal_representative": {
+      "name": "",
+      "signature_present": false,
+      "date": ""
+    }
+  }
+}
