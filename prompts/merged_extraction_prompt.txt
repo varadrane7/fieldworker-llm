@@ -2,10 +2,15 @@
 
 You are extracting one Service Detail Report (SDR) PDF into a single JSON object.
 
+**First, check the top-right corner of the first page for the text "SDR".**
+- If "SDR" is NOT present in the top-right of the first page, stop immediately and return:
+  `{"errorCode": 400, "error": "Invalid PDF file"}`
+- If "SDR" IS present, set `errorCode` to `null` and proceed with extraction below.
+
 The PDF is the source of truth. Read both text and layout. Do not use outside knowledge.
 
-Your job is strict extraction, not summarization.  
-Do not invent values.  
+Your job is strict extraction, not summarization.
+Do not invent values.
 Do not move content across sections unless clearly indicated in the PDF.
 
 If a field is missing, leave it as `""` or `[]` according to the schema.
@@ -289,8 +294,9 @@ Extract tables when present:
 
 ## Final Output
 
-- Return ONLY valid JSON  
-- No explanations  
-- No markdown in output  
-- Do not add or rename keys  
-- Do not merge sections  
+- Return ONLY valid JSON
+- No explanations
+- No markdown in output
+- Do not add or rename keys
+- Do not merge sections
+- Always include `errorCode` in the output: `null` on success, `400` on invalid PDF

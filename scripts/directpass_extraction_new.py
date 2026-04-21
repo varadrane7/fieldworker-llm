@@ -224,7 +224,11 @@ def process_single_pdf(client, pdf_path, prompt_path, schema_path, results_dir):
 
     raw_text = call_model_with_pdf(client, pdf_path, final_prompt)
     parsed_output = extract_json_from_text(raw_text)
-    final_output = enforce_schema(parsed_output, schema_template)
+
+    if parsed_output.get("errorCode") == 400:
+        final_output = {"errorCode": 400, "error": parsed_output.get("error", "Invalid PDF file")}
+    else:
+        final_output = enforce_schema(parsed_output, schema_template)
 
     ensure_dir(results_dir)
     output_name = os.path.splitext(os.path.basename(pdf_path))[0] + "_merged_directpass_extraction.json"

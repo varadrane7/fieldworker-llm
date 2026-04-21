@@ -1,4 +1,5 @@
 {
+    "errorCode": null,
     "document_type": "",
     "plan_id": "",
     "customer_information": {
