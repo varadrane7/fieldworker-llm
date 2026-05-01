@@ -1,112 +1,103 @@
-# SDR PDF Extractor
+# SDR PDF Extraction Pipeline
 
-Converts **Service Data Record (SDR)** PDF documents into structured JSON using a **two-pass AI pipeline** powered by Azure-hosted **GPT-4.1** with vision capabilities.
+## Overview
+This project implements a one-pass pipeline to extract structured JSON from Service Detail Report (SDR) PDFs using **OpenAI’s GPT-4.1** model, hosted on Azure.
+
+The system processes raw PDFs directly without traditional parsing libraries. Instead, it relies on the model’s ability to interpret both text and layout.
 
 ---
 
-## How It Works
+## Key Features
 
-```
-PDF → [Pass 1: Vision] → Verbatim Markdown Transcript → [Pass 2: Text] → Structured JSON
-```
-
-| Pass | Model Input | Output |
-|------|-------------|--------|
-| **Pass 1 — Vision** | Each PDF page as an image | Verbatim Markdown transcript per page |
-| **Pass 2 — Text** | Full combined transcript | Schema-mapped structured JSON |
+- One-pass extraction (no OCR or preprocessing pipeline)
+- Prompt-driven logic (easy to iterate without changing code)
+- Schema-guided output
+- Works across multiple SDR formats (NJISP and TPSDR)
 
 ---
 
 ## Project Structure
 
 ```
-.
-├── sdr_extractor.py     # Main extraction script
-├── requirements.txt     # Python dependencies
-├── .env                 # API credentials (not committed)
-├── docs/                # Input SDR PDF files
-│   ├── 1.pdf
-│   └── 2.pdf
-└── results/             # Extracted JSON outputs (auto-created)
+project-root/
+├── docs/              # Input PDF files
+├── prompts/           # Prompt templates
+├── scripts/           # Python pipeline
+├── results/           # Output JSON files
+├── .env               # API keys
+└── README.md
 ```
-
----
-
-## Prerequisites
-
-- Python 3.9+
-- **Poppler** (required by `pdf2image` for PDF rendering)
-  - Windows: Download from [oschwartz10612/poppler-windows](https://github.com/oschwartz10612/poppler-windows/releases) and add to PATH
-  - macOS: `brew install poppler`
-  - Linux: `sudo apt-get install poppler-utils`
 
 ---
 
 ## Setup
 
-**1. Clone the repository**
-```bash
-git clone https://github.com/jyothsnar24/fieldworker-llm.git
-cd fieldworker-llm
-```
+### 1. Install Dependencies
+pip install openai python-dotenv
 
-**2. Create a virtual environment and install dependencies**
-```bash
-python -m venv venv
-venv\Scripts\activate        # Windows
-# source venv/bin/activate   # macOS/Linux
-
-pip install -r requirements.txt
-```
-
-**3. Configure environment variables**
-
+### 2. Configure Environment Variables
 Create a `.env` file in the project root:
-```env
-FW_API_URL=https://your-azure-endpoint/openai/deployments/gpt-4.1
-FW_API_KEY=your_azure_api_key
-```
+
+FW_API_URL=your_api_base_url
+FW_API_KEY=your_api_key
 
 ---
 
-## Usage
+## Running the Pipeline
 
-```bash
-# Extract a single SDR PDF (output saved to results/)
-python sdr_extractor.py docs/1.pdf
+From the scripts directory:
 
-# Specify a custom output path
-python sdr_extractor.py docs/2.pdf --output results/custom_output.json
-```
+python directpass_extraction_new.py
 
----
-
-## Output Schema
-
-The extracted JSON follows a fixed schema covering:
-
-- **Customer Information** — name, ID, DOB, gender, Medicaid details
-- **Diagnosis Information** — primary & secondary ICD codes
-- **Provider & Support Coordination** — company names, NPI, address
-- **Service Authorizations** — procedure codes, dates, units, costs, PA numbers
-- **Customer Goals** — outcome descriptions
-- **Customer Needs** — health, support, and employment needs
+By default:
+- Reads PDFs from docs/
+- Applies extraction prompt
+- Saves results to results/
 
 ---
 
-## Dependencies
+## How It Works
 
-| Package | Purpose |
-|---------|---------|
-| `openai>=1.30.0` | Azure GPT-4.1 API client |
-| `python-dotenv>=1.0.0` | Load `.env` credentials |
-| `pdf2image>=1.17.0` | Render PDF pages as images |
-| `Pillow>=10.0.0` | Image processing & resizing |
+1. Load prompt from /prompts
+2. Inject JSON schema
+3. Encode PDF
+4. Send to Vision-LLM
+5. Receive JSON
+6. Save output
+
+---
+
+## Known Limitations
+
+### Multi-Column, Cross-Page Needs Sections
+These sections are difficult due to layout complexity. Most content is extracted, but grouping may not always be perfect.
+
+### Layout Ambiguity
+When structure is unclear, the model prioritizes:
+- preserving structure
+- avoiding hallucination
+
+---
+
+## Future Improvements
+
+- API-level structured outputs (response_format)
+- Post-processing cleanup
+- Further prompt refinement
+
+---
+
+## Summary
+
+- No external parsing
+- Minimal preprocessing
+- Prompt-driven system
+- Consistent outputs across formats
 
 ---
 
 ## Notes
 
-- The script renders PDFs at **150 DPI** and caps image width at **1500px** for optimal token efficiency with GPT-4.1 vision.
-- Temperature is set to `0` in both passes for deterministic, consistent extraction.
-- The `.env` file is excluded from version control — never commit your API keys.
+- Optimized for correctness over perfect layout reconstruction
+- Prompt engineering is the main improvement lever
+- Outputs may require minor cleanup for production
